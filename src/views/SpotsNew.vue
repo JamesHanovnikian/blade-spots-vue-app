@@ -6,19 +6,19 @@
         <li v-for="error in errors" v-bind:key="error"> {{ error }} </li>
       </ul>
      <p> Name: 
-      <input type="text" v-model="newSpotsParams.name"> </p>
+      <input type="text" v-model="newSpotParams.name"> </p>
      <p> Address:
-      <input type="text" v-model="newSpotsParams.address"> </p>
+      <input type="text" v-model="newSpotParams.address"> </p>
      <p> Category:
-      <input type="text" v-model="newSpotsParams.category"> </p>
+      <input type="text" v-model="newSpotParams.category"> </p>
      <p> Description:
-      <input type="text" v-model="newSpotsParams.description"> </p>
+      <input type="text" v-model="newSpotParams.description"> </p>
       <p> Bust:
-      <input type="text" v-model="newSpotsParams.bust"> </p>
+      <input type="text" v-model="newSpotParams.bust"> </p>
       <p> Image URL:
-      <input type="text" v-model="newSpotsParams.image_url"> </p>
+      <input type="text" v-model="newSpotParams.image_url"> </p>
 
-      <button v-on:click="spotNew()"> </button>
+      <button v-on:click="spotNew()"> Submit </button>
 
 
 
@@ -27,7 +27,8 @@
   </div>
 </template>
 
-<style></style>
+<style>
+</style>
 
 <script>
 import axios from "axios";
@@ -35,17 +36,17 @@ export default {
   data: function () {
     return {
       errors: [],
-      newSpotsParams: {},
+      newSpotParams: {},
     };
   },
   created: function () {},
   methods: {
     spotNew: function () {
       axios
-        .post("/spots", this.newSpotsParams)
+        .post("/spots", this.newSpotParams)
         .then((response) => {
           console.log("spots create", response.data);
-          this.$router.push("/spots");
+          this.$router.push("/spotsindex");
         })
         .catch((error) => {
           console.log("Spot Create Error", error.response);

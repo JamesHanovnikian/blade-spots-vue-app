@@ -11,7 +11,9 @@
      <p> Address: {{ spot.address }}</p>
      <p> Category: {{ spot.category }} </p> 
      <p> Bust: {{ spot.bust }}</p>
-      <button> </button> 
+       <router-link v-bind:to="`/spots/${spot.id}`"> 
+       <button> More Details </button> 
+       </router-link>
      <p><img v-bind:src="spot.image_url"></p>
      <hr> 
 

@@ -6,6 +6,7 @@ import Login from '../views/Login.vue'
 import Logout from '../views/Logout.vue'
 import SpotsIndex from '../views/SpotsIndex.vue'
 import SpotsNew from '../views/SpotsNew.vue'
+import SpotsShow from '../views/SpotsShow.vue'
 
 
 
@@ -39,7 +40,12 @@ const routes = [
     component: SpotsIndex
   },
   {
-    path: '/spots/new',
+    path: '/spots/:id',
+    name: 'SpotsShow',
+    component: SpotsShow
+  },
+  {
+    path: '/newspots/',
     name: 'SpotsNew',
     component: SpotsNew
   },

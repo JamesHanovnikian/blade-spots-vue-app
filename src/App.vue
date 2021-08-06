@@ -7,7 +7,7 @@
       <router-link to="/logout"> Logout </router-link> |
       <router-link to="/about">About</router-link> |
       <router-link to="/spotsindex"> Spots </router-link> |
-      <router-link to="/spots/new"> Add a Spot </router-link>
+      <router-link to="/newspots"> Add a Spot </router-link>
     </div>
     <router-view/>
   </div>
