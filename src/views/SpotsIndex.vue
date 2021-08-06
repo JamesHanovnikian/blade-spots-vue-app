@@ -1,5 +1,6 @@
 <template>
   <div class="spotsindex">
+    
     <h1>{{ message }}</h1>
     <p> {{ }} </p>
 
@@ -9,8 +10,9 @@
      <p> Spot: {{ spot.name}} </p>
      <p> Address: {{ spot.address }}</p>
      <p> Category: {{ spot.category }} </p> 
-      <p> Bust: {{ spot.bust }}</p>
-     <p> Image: {{ spot.image_url }}</p>
+     <p> Bust: {{ spot.bust }}</p>
+      <button> </button> 
+     <p><img v-bind:src="spot.image_url"></p>
      <hr> 
 
     </div>
@@ -18,6 +20,9 @@
 </template>
 
 <style>
+img {
+  width: 400px;
+}
 </style>
 
 <script>
@@ -40,6 +45,7 @@ export default {
         this.spots = response.data;
       });
     },
+    showUserId: function () {},
   },
 };
 </script>

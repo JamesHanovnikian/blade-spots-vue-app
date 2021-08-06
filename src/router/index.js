@@ -1,10 +1,14 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-import SpotsIndex from '../views/SpotsIndex.vue'
 import Signup from '../views/Signup.vue'
 import Login from '../views/Login.vue'
 import Logout from '../views/Logout.vue'
+import SpotsIndex from '../views/SpotsIndex.vue'
+import SpotsNew from '../views/SpotsNew.vue'
+
+
+
 
 Vue.use(VueRouter)
 
@@ -33,6 +37,11 @@ const routes = [
     path: '/spotsindex',
     name: 'SpotsIndex',
     component: SpotsIndex
+  },
+  {
+    path: '/spots/new',
+    name: 'SpotsNew',
+    component: SpotsNew
   },
   {
     path: '/about',
