@@ -29,6 +29,10 @@ export default {
         this.spot = response.data;
       });
     },
+    displayComments: function () {
+      console.log("showing comments");
+      axios.get();
+    },
   },
 };
 </script>
