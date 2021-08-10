@@ -23,7 +23,7 @@
 
 <style>
 img {
-  width: 400px;
+  width: 200px;
 }
 </style>
 
