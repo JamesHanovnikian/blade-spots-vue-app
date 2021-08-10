@@ -6,6 +6,11 @@
     <p> Category: {{ spot.category }} </p>
     <p> Description: {{ spot.description }} </p>
     <p> Bust: {{ spot.bust }} </p>
+
+
+
+    <p> Comments: </p>
+    {{ comments }}
   </div>
 </template>
 
@@ -17,21 +22,26 @@ export default {
   data: function () {
     return {
       spot: {},
+      comments: [],
     };
   },
-  created: function () {
+  mounted: function () {
     this.spotShow();
+    this.displayComments();
   },
   methods: {
     spotShow: function () {
       axios.get("/spots/" + this.$route.params.id).then((response) => {
-        console.log("spots show", response.data);
-        this.spot = response.data;
+        console.log("spots show", response);
+        this.spot = response["data"]["data"];
       });
     },
     displayComments: function () {
       console.log("showing comments");
-      axios.get();
+      axios.get("/comments/" + this.$route.params.id).then((response) => {
+        console.log("showing comments", response.data);
+        this.comments = response.data;
+      });
     },
   },
 };

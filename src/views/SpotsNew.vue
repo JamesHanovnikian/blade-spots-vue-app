@@ -7,7 +7,7 @@
       </ul>
      <p> Name: 
       <input type="text" v-model="newSpotParams.name"> </p>
-     <p> Address:
+     <p> Address: 
       <input type="text" v-model="newSpotParams.address"> </p>
      <p> Category:
       <input type="text" v-model="newSpotParams.category"> </p>
