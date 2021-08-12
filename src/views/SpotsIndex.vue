@@ -1,5 +1,6 @@
 <template>
   <div class="spotsindex">
+    <router-link to="/spotsmap"> Map of spots </router-link> 
     
     <h1>{{ message }}</h1>
     <p> {{ }} </p>
@@ -29,6 +30,8 @@ img {
 
 <script>
 import axios from "axios";
+
+import mapboxgl from "mapbox-gl";
 export default {
   data: function () {
     return {
@@ -36,7 +39,7 @@ export default {
       spots: [],
     };
   },
-  created: function () {
+  mounted: function () {
     this.spotsIndex();
   },
   methods: {

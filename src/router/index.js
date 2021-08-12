@@ -5,8 +5,10 @@ import Signup from '../views/Signup.vue'
 import Login from '../views/Login.vue'
 import Logout from '../views/Logout.vue'
 import SpotsIndex from '../views/SpotsIndex.vue'
+import SpotsMap from '../views/SpotsIndexMap.vue'
 import SpotsNew from '../views/SpotsNew.vue'
 import SpotsShow from '../views/SpotsShow.vue'
+
 
 
 
@@ -38,6 +40,11 @@ const routes = [
     path: '/spotsindex',
     name: 'SpotsIndex',
     component: SpotsIndex
+  },
+  {
+    path: '/spotsMap',
+    name: 'SpotsMap',
+    component: SpotsMap
   },
   {
     path: '/spots/:id',

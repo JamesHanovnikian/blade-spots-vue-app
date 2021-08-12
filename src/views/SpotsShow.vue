@@ -9,9 +9,25 @@
     <p> Bust: {{ spot.bust }} </p>
 
 
+    <h2> New Comment </h2> 
+    <form v-on:submit.prevent="createComments()"> 
+       <ul>
+        <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
+      </ul>
+      <input type="text" v-model="newCommentParams.content" /> <button v-on:click="createComment()">  </button>
 
-    <p> Comments: </p>
-    {{ comments }}
+
+    </form> 
+    <h2> Comments: </h2>
+    <div v-for="comment in comments"> 
+     <p>  Date Posted: {{ comment.created_at }} | User Id: {{ comment.user_id }} | Comment: {{ comment.content }} </p> 
+
+     
+    </div>
+    <h2> Tricks Done Here: </h2> 
+    <div v-for="trick in tricks"> 
+      <p>  Date Posted: {{ trick.created_at }} | User Id: {{ trick.user_id }} | Trick: {{ trick.content }} </p> 
+    </div> 
   </div>
 </template>
 
@@ -26,26 +42,51 @@ export default {
     return {
       spot: {},
       comments: [],
+      tricks: [],
+      newCommentParams: {},
     };
   },
   mounted: function () {
     this.spotShow();
     this.displayComments();
     this.showPageMapBox();
+    this.displayTricks();
   },
   methods: {
     spotShow: function () {
       axios.get("/spots/" + this.$route.params.id).then((response) => {
         console.log("spots show", response);
-        this.spot = response["data"]["data"];
+        this.spot = response.data;
       });
     },
     displayComments: function () {
       console.log("showing comments");
-      axios.get("/comments/" + this.$route.params.id).then((response) => {
-        console.log("showing comments", response.data);
-        this.comments = response.data;
-      });
+      axios
+        .get(
+          "/spots/" + this.$route.params.id + "/comments",
+          this.newCommentParams
+        )
+        .then((response) => {
+          console.log("showing comments", response.data);
+          this.comments = response.data;
+        });
+    },
+    displayTricks: function () {
+      console.log("showing tricks");
+      axios
+        .get("/spots/" + this.$route.params.id + "/tricks")
+        .then((response) => {
+          console.log("showing tricks", response.data);
+          this.tricks = response.data;
+        });
+    },
+    createComment: function () {
+      console.log("creating a new comment");
+      axios
+        .post("/spots/" + this.$route.params.id + "/comments")
+        .then((response) => {
+          console.log("adding a new comment", response.data);
+        });
     },
     showPageMapBox: function () {
       mapboxgl.accessToken =
@@ -57,9 +98,11 @@ export default {
         center: [-87.6298, 41.8781], // starting position [lng, lat]
         zoom: 8, // starting zoom
       });
-      const marker1 = new mapboxgl.Marker()
-        .setLngLat([-87.8, 42.19])
-        .addTo(map);
+      console.log("hello!");
+
+      // const marker1 = new mapboxgl.Marker()
+      //   .setLngLat([this.spot.longitude, this.spot.latitude])
+      //   .addTo(map);
     },
   },
 };
