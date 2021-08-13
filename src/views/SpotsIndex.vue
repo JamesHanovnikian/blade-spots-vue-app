@@ -13,7 +13,7 @@
      <p> Category: {{ spot.category }} </p> 
      <p> Bust: {{ spot.bust }}</p>
        <router-link v-bind:to="`/spots/${spot.id}`"> 
-       <button> More Details </button> 
+       <button> Select </button> 
        </router-link>
      <p><img v-bind:src="spot.image_url"></p>
      <hr> 

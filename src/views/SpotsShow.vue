@@ -9,25 +9,38 @@
     <p> Bust: {{ spot.bust }} </p>
 
 
-    <h2> New Comment </h2> 
-    <form v-on:submit.prevent="createComments()"> 
+    <h2> Add your trick! </h2> 
+    <form> 
        <ul>
-        <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
+        <li v-for="error in errors" v-bind:key="error"> {{ error }} </li>
       </ul>
-      <input type="text" v-model="newCommentParams.content" /> <button v-on:click="createComment()">  </button>
+  <input type="text" v-model="newTrickParams.content" /> <button v-on:click="createTrick()"> Add </button>
+    </form> 
+2
+    <h2> Tricks Done Here: </h2> 
+
+    <div v-for="trick in tricks"> 
+      <p>  Date Posted: {{ trick.created_at }} | User Id: {{ trick.user_id }} | Trick: {{ trick.content }} </p> 
+      <hr> 
+    </div> 
+
+    <h2> New Comment </h2> 
+    <form v-on:submit.prevent="createComment()"> 
+       <ul>
+        <li v-for="error in errors" v-bind:key="error"> {{ error }} </li>
+      </ul>
+      <input type="text" v-model="newCommentParams.content" /> <button v-on:click="createComment()"> Post </button>
 
 
     </form> 
     <h2> Comments: </h2>
     <div v-for="comment in comments"> 
      <p>  Date Posted: {{ comment.created_at }} | User Id: {{ comment.user_id }} | Comment: {{ comment.content }} </p> 
+     <hr>
 
      
     </div>
-    <h2> Tricks Done Here: </h2> 
-    <div v-for="trick in tricks"> 
-      <p>  Date Posted: {{ trick.created_at }} | User Id: {{ trick.user_id }} | Trick: {{ trick.content }} </p> 
-    </div> 
+    
   </div>
 </template>
 
@@ -44,13 +57,15 @@ export default {
       comments: [],
       tricks: [],
       newCommentParams: {},
+      newTrickParams: {},
+      errors: [],
     };
   },
   mounted: function () {
     this.spotShow();
+    this.displayTricks();
     this.displayComments();
     this.showPageMapBox();
-    this.displayTricks();
   },
   methods: {
     spotShow: function () {
@@ -76,16 +91,30 @@ export default {
       axios
         .get("/spots/" + this.$route.params.id + "/tricks")
         .then((response) => {
-          console.log("showing tricks", response.data);
+          console.log("showing tricks!", response.data);
           this.tricks = response.data;
         });
     },
     createComment: function () {
-      console.log("creating a new comment");
       axios
-        .post("/spots/" + this.$route.params.id + "/comments")
+        .post(
+          "/spots/" + this.$route.params.id + "/comments",
+          this.newCommentParams
+        )
         .then((response) => {
           console.log("adding a new comment", response.data);
+          // this.$router.push("/spots/");
+        });
+    },
+    createTrick: function () {
+      axios
+        .post(
+          "/spots/" + this.$route.params.id + "/tricks",
+          this.newTrickParams
+        )
+        .then((response) => {
+          console.log("adding a new trick", response.data);
+          // this.$router.push("/spots/");
         });
     },
     showPageMapBox: function () {
@@ -100,9 +129,9 @@ export default {
       });
       console.log("hello!");
 
-      // const marker1 = new mapboxgl.Marker()
-      //   .setLngLat([this.spot.longitude, this.spot.latitude])
-      //   .addTo(map);
+      const marker1 = new mapboxgl.Marker()
+        .setLngLat([spot.longitude, spot.latitude])
+        .addTo(map);
     },
   },
 };
