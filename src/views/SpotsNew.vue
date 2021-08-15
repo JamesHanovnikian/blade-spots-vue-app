@@ -1,6 +1,7 @@
 <template>
   <div class="SpotsNew">
     <h1> Submit Your Spot </h1>
+    {{selectedFile}}
     <form v-on:submit.prevent="spotNew()">
       <ul> 
         <li v-for="error in errors" v-bind:key="error"> {{ error }} </li>
@@ -17,10 +18,13 @@
       <input type="text" v-model="newSpotParams.bust"> </p>
       <p> Image URL:
       <input type="text" v-model="newSpotParams.image_url"> </p>
+      
+      <p> <input type="file" @change="onFileSelected"> 
+      <button @click="onUpload"> Upload! </button></p>
 
       <button v-on:click="spotNew()"> Submit </button>
 
-
+    
 
     </form>
 
@@ -37,6 +41,7 @@ export default {
     return {
       errors: [],
       newSpotParams: {},
+      selectedFile: null,
     };
   },
   created: function () {},
@@ -53,6 +58,11 @@ export default {
           this.errors = error.response.data.errors;
         });
     },
+    onFileSelected(event) {
+      console.log(event);
+      this.selectedFile = event.target.files[0];
+    },
+    onUpload() {},
   },
 };
 </script>

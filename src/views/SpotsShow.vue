@@ -16,7 +16,7 @@
       </ul>
   <input type="text" v-model="newTrickParams.content" /> <button v-on:click="createTrick()"> Add </button>
     </form> 
-2
+
     <h2> Tricks Done Here: </h2> 
 
     <div v-for="trick in tricks"> 
@@ -65,10 +65,21 @@ export default {
     this.spotShow();
     this.displayTricks();
     this.displayComments();
-    this.showPageMapBox();
   },
   methods: {
     spotShow: function () {
+      mapboxgl.accessToken =
+        "pk.eyJ1Ijoiamhhbm92IiwiYSI6ImNrcm9hcjh0MzIxajIybm1sZGJyazdlOW4ifQ.AQSrg9-PGtHngXM9N1nb0Q";
+
+      const map = new mapboxgl.Map({
+        container: "map", // container ID
+        style: "mapbox://styles/mapbox/streets-v11",
+        center: [-87.6298, 41.8781],
+        zoom: 8,
+      });
+      const marker1 = new mapboxgl.Marker()
+        .setLngLat({ lng: spot.longitude, lat: spot.latitude })
+        .addTo(map);
       axios.get("/spots/" + this.$route.params.id).then((response) => {
         console.log("spots show", response);
         this.spot = response.data;
@@ -116,22 +127,6 @@ export default {
           console.log("adding a new trick", response.data);
           // this.$router.push("/spots/");
         });
-    },
-    showPageMapBox: function () {
-      mapboxgl.accessToken =
-        "pk.eyJ1Ijoiamhhbm92IiwiYSI6ImNrcm9hcjh0MzIxajIybm1sZGJyazdlOW4ifQ.AQSrg9-PGtHngXM9N1nb0Q";
-
-      const map = new mapboxgl.Map({
-        container: "map", // container ID
-        style: "mapbox://styles/mapbox/streets-v11", // style URL
-        center: [-87.6298, 41.8781], // starting position [lng, lat]
-        zoom: 8, // starting zoom
-      });
-      console.log("hello!");
-
-      const marker1 = new mapboxgl.Marker()
-        .setLngLat([spot.longitude, spot.latitude])
-        .addTo(map);
     },
   },
 };
