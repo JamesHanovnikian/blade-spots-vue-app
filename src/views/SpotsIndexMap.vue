@@ -44,7 +44,7 @@ export default {
         container: "map", // container ID
         style: "mapbox://styles/mapbox/streets-v11", // style URL
         center: [-87.6298, 41.8781], // starting position [lng, lat]
-        zoom: 8, // starting zoom
+        zoom: 10, // starting zoom
       });
       axios.get("/spots").then((response) => {
         console.log("spots index", response.data);
@@ -72,13 +72,6 @@ export default {
         zoom: 8, // starting zoom
       });
       console.log(this.spots);
-
-      this.spots.forEach(function (spot) {
-        // var marker1 = new mapboxgl.Marker();
-        console.log("MAAAAAAaaaaaaaAAAAAP");
-        // .setLngLat([spot.longitude])
-        // .addTo(map);
-      });
     },
   },
 };

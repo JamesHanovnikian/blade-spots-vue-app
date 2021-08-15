@@ -68,21 +68,23 @@ export default {
   },
   methods: {
     spotShow: function () {
-      mapboxgl.accessToken =
-        "pk.eyJ1Ijoiamhhbm92IiwiYSI6ImNrcm9hcjh0MzIxajIybm1sZGJyazdlOW4ifQ.AQSrg9-PGtHngXM9N1nb0Q";
-
-      const map = new mapboxgl.Map({
-        container: "map", // container ID
-        style: "mapbox://styles/mapbox/streets-v11",
-        center: [-87.6298, 41.8781],
-        zoom: 8,
-      });
-      const marker1 = new mapboxgl.Marker()
-        .setLngLat({ lng: spot.longitude, lat: spot.latitude })
-        .addTo(map);
       axios.get("/spots/" + this.$route.params.id).then((response) => {
         console.log("spots show", response);
+
         this.spot = response.data;
+        mapboxgl.accessToken =
+          "pk.eyJ1Ijoiamhhbm92IiwiYSI6ImNrcm9hcjh0MzIxajIybm1sZGJyazdlOW4ifQ.AQSrg9-PGtHngXM9N1nb0Q";
+
+        const map = new mapboxgl.Map({
+          container: "map", // container ID
+          style: "mapbox://styles/mapbox/streets-v11", // style URL
+          center: [this.spot.longitude, this.spot.latitude], // starting position [lng, lat]
+          zoom: 11, // starting zoom
+        });
+        var marker1 = new mapboxgl.Marker();
+        marker1
+          .setLngLat({ lng: this.spot.longitude, lat: this.spot.latitude })
+          .addTo(map);
       });
     },
     displayComments: function () {
