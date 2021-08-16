@@ -46,16 +46,20 @@ export default {
         center: [-87.6298, 41.8781], // starting position [lng, lat]
         zoom: 10, // starting zoom
       });
+      const popup = new mapboxgl.Popup({ offset: 25 }).setText(
+        "Construction on the Washington Monument began in 1848."
+      );
+      const el = document.createElement("div");
+      el.id = "marker";
+
       axios.get("/spots").then((response) => {
         console.log("spots index", response.data);
         this.spots = response.data;
 
         this.spots.forEach(function (spot) {
-          var marker1 = new mapboxgl.Marker();
-          console.log("MAAAAAAaaaaaaaAAAAAP");
-          marker1
-            .setLngLat({ lng: spot.longitude, lat: spot.latitude })
-            .addTo(map);
+          var marker1 = new mapboxgl.Marker(el);
+          marker1.setLngLat({ lng: spot.longitude, lat: spot.latitude });
+          setPopup(popup).addTo(map);
         });
       });
     },
