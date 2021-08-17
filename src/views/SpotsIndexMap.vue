@@ -70,7 +70,8 @@ export default {
               spot.address +
               " <a href='/spots/" +
               spot.id +
-              "'> View More </a> " +
+              "'>  View More </a> " +
+              "<br>" +
               "</h3>"
           );
 

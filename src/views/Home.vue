@@ -16,9 +16,7 @@ export default {
       message: "Welcome to Blade Spots App",
     };
   },
-  mounted: function () {
-    this.startMapBox();
-  },
+  mounted: function () {},
   methods: {
     startMapBox: function () {
       mapboxgl.accessToken =

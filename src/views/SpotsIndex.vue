@@ -4,18 +4,7 @@
     
     <h1>{{ message }}</h1>
 
-    <p> Search by name: <input type="text" v-model="searchTerm"> </p> 
-    
-    <!-- Filter type: <select name="category" id="category">
-      <option value="rail"> Rail </option>
-      <option value="ledge">Ledge </option>
-      <option value="Bank"> Bank  </option>
-      <option v-on:click="changeSearchTerm()"value="skatepark"> Skatepark </option>
-    </select> -->
-
-  
-
-    <p> Filter By: <button v-on:click="changeSkatepark()"> Skatepark </button> 
+   <p> Filter By: <button v-on:click="changeSkatepark()"> Skatepark </button> 
     
     <button  v-on:click="changeRail()"> Rail </button> <button  v-on:click="changeLedge()"> Ledge </button> <button  v-on:click="changeBank()"> Bank </button> </p>
     <div v-for="spot in filterBy(spots, searchTerm ,'category')"> 
@@ -29,7 +18,7 @@
        <button> Select </button> 
        </router-link>
      <p><img v-bind:src="spot.image_url"></p>
-     Image: {{ spot.image }}
+     Image: {{ spot.image }} 
      <p> <img v-bind:src="spot.image">  </p>
      <hr> 
 
