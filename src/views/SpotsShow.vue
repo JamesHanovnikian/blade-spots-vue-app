@@ -1,9 +1,10 @@
 <template>
   <div class="spots-show">
     <h2> {{ spot.name }} </h2>
-    <div id='map' style='width: 400px; height: 300px;'></div>
+    
     <img v-bind:src="spot.image_url"> 
     <p> Address: {{ spot.address }} </p>
+    <div id='map' style='width: 400px; height: 300px;'></div>
     <p> Category: {{ spot.category }} </p>
     <p> Description: {{ spot.description }} </p>
     <p> Bust: {{ spot.bust }} </p>
