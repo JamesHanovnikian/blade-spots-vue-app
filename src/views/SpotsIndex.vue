@@ -1,15 +1,28 @@
 <template>
   <div class="spotsindex">
-    <router-link to="/spotsmap"> Map of spots </router-link> 
+    <router-link to="/spotsmap"> <button> Map View </button>  </router-link> 
     
     <h1>{{ message }}</h1>
-    <p> {{ }} </p>
 
-    <div v-for="spot in spots"> 
+    <p> Search by name: <input type="text" v-model="searchTerm"> </p> 
+    
+    <!-- Filter type: <select name="category" id="category">
+      <option value="rail"> Rail </option>
+      <option value="ledge">Ledge </option>
+      <option value="Bank"> Bank  </option>
+      <option v-on:click="changeSearchTerm()"value="skatepark"> Skatepark </option>
+    </select> -->
+
+  
+
+    <p> Filter By: <button v-on:click="changeSkatepark()"> Skatepark </button> 
+    
+    <button  v-on:click="changeRail()"> Rail </button> <button  v-on:click="changeLedge()"> Ledge </button> <button  v-on:click="changeBank()"> Bank </button> </p>
+    <div v-for="spot in filterBy(spots, searchTerm ,'category')"> 
      <p> Id: {{ spot.id }}</p>
      <p> User: {{ spot.user_id }}</p>
      <p> Spot: {{ spot.name}} </p>
-     <p> Address: {{ spot.address }}</p>
+     <p> Address: {{ spot.address }}</p>  
      <p> Category: {{ spot.category }} </p> 
      <p> Bust: {{ spot.bust }}</p>
        <router-link v-bind:to="`/spots/${spot.id}`"> 
@@ -32,13 +45,20 @@ img {
 
 <script>
 import axios from "axios";
-
+import Vue2Filters from "vue2-filters";
 import mapboxgl from "mapbox-gl";
+import Dropdown from "vue-simple-search-dropdown";
+
 export default {
+  mixins: [Vue2Filters.mixin],
   data: function () {
     return {
       message: "Find a spot",
       spots: [],
+      searchTerm: "",
+      isToggled: false,
+      isToggledRail: false,
+      isToggledLedge: false,
     };
   },
   mounted: function () {
@@ -51,6 +71,50 @@ export default {
         console.log("spots index", response.data);
         this.spots = response.data;
       });
+    },
+    changeSkatepark: function () {
+      console.log("hello");
+      this.isToggled = !this.isToggled;
+      console.log(this.isToggled);
+      if (this.isToggled == true) {
+        this.searchTerm = "skatepark";
+        console.log(this.searchTerm);
+      } else {
+        this.searchTerm = "";
+      }
+    },
+    changeRail: function () {
+      console.log("hello");
+      this.isToggledRail = !this.isToggledRail;
+      console.log(this.isToggledRail);
+      if (this.isToggledRail == true) {
+        this.searchTerm = "rail";
+        console.log(this.searchTerm);
+      } else {
+        this.searchTerm = "";
+      }
+    },
+    changeLedge: function () {
+      console.log("hello");
+      this.isToggledLedge = !this.isToggledLedge;
+      console.log(this.isToggledLedge);
+      if (this.isToggledLedge == true) {
+        this.searchTerm = "ledge";
+        console.log(this.searchTerm);
+      } else {
+        this.searchTerm = "";
+      }
+    },
+    changeBank: function () {
+      console.log("hello");
+      this.isToggledBank = !this.isToggledBank;
+      console.log(this.isToggledBank);
+      if (this.isToggledBank == true) {
+        this.searchTerm = "bank";
+        console.log(this.searchTerm);
+      } else {
+        this.searchTerm = "";
+      }
     },
     showUserId: function () {},
   },

@@ -14,7 +14,7 @@
       <input type="text" v-model="newSpotParams.category"> </p>
      <p> Description:
       <input type="text" v-model="newSpotParams.description"> </p>
-      <p> Bust:
+      <p> Bust-Level:
       <input type="text" v-model="newSpotParams.bust"> </p>
       <p> Image URL:
       <input type="text" v-model="newSpotParams.image_url"> </p>

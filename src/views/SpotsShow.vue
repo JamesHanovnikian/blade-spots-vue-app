@@ -17,7 +17,7 @@
   <input type="text" v-model="newTrickParams.content" /> <button v-on:click="createTrick()"> Add </button>
     </form> 
 
-    <h2> Tricks Done Here: </h2> 
+    <h2> Trick Board: </h2> 
 
     <div v-for="trick in tricks"> 
       <p>  Date Posted: {{ trick.created_at }} | User Id: {{ trick.user_id }} | Trick: {{ trick.content }} </p> 
@@ -81,6 +81,7 @@ export default {
           center: [this.spot.longitude, this.spot.latitude], // starting position [lng, lat]
           zoom: 11, // starting zoom
         });
+        map.addControl(new mapboxgl.NavigationControl());
         const popup = new mapboxgl.Popup({ offset: 25 }).setText(
           "Construction on the Washington Monument began in 1848."
         );

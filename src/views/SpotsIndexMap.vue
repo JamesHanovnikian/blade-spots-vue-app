@@ -1,7 +1,10 @@
 <template>
   <div class="SpotsMapIndex">
-    <router-link to="/spotsindex"> Spot list </router-link> 
+    <router-link to="/spotsindex"> <button> List View </button> </router-link> 
     <h1>{{ message }}</h1>
+     <!-- <div v-for="spot in filterBy(spots, searchTerm ,'category')"> 
+     
+     </div>  -->
 
     <div id='map' style='width: 800px; height: 600px;'></div>
   
@@ -28,6 +31,7 @@ export default {
     return {
       message: "Find a spot",
       spots: [],
+      searchTerm: "",
     };
   },
 
@@ -42,10 +46,11 @@ export default {
 
       const map = new mapboxgl.Map({
         container: "map", // container ID
-        style: "mapbox://styles/mapbox/streets-v11", // style URL
+        style: "mapbox://styles/mapbox/navigation-night-v1", // style URL
         center: [-87.6298, 41.8781], // starting position [lng, lat]
         zoom: 10, // starting zoom
       });
+      map.addControl(new mapboxgl.NavigationControl());
 
       axios.get("/spots").then((response) => {
         console.log("spots index", response.data);
@@ -56,8 +61,19 @@ export default {
         // el.id = "marker";
         this.spots.forEach(function (spot) {
           const popup = new mapboxgl.Popup({ offset: 25 }).setHTML(
-            "<h2> Hello <h2> "
+            '<h3> <a href="/spots/' +
+              spot.id +
+              '">' +
+              spot.name +
+              " Select</a></h3>"
           );
+
+          //  spot.name +
+          //     "<br>" +
+          //     spot.address +
+          //     " <a href='/spots/'" +
+          //     spot.id +
+          //     "> View More </a> "
 
           var marker1 = new mapboxgl.Marker()
             .setLngLat({ lng: spot.longitude, lat: spot.latitude })
