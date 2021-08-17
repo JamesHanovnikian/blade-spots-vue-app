@@ -2,12 +2,13 @@
   <div class="SpotsMapIndex">
     <router-link to="/spotsindex"> <button> List View </button> </router-link> 
     <h1>{{ message }}</h1>
-     <!-- <div v-for="spot in filterBy(spots, searchTerm ,'category')"> 
-     
-     </div>  -->
-
+    <p> Search by name: <input type="text" v-model="searchTerm"> </p> 
     <div id='map' style='width: 800px; height: 600px;'></div>
   
+     <div v-for="spot in filterBy(spots, searchTerm ,'category')"> 
+      
+     </div> 
+
 
    
   </div>
@@ -24,9 +25,11 @@ img {
 </style>  
 
 <script>
+import Vue2Filters from "vue2-filters";
 import axios from "axios";
 import mapboxgl from "mapbox-gl";
 export default {
+  mixins: [Vue2Filters.mixin],
   data: function () {
     return {
       message: "Find a spot",
@@ -61,19 +64,15 @@ export default {
         // el.id = "marker";
         this.spots.forEach(function (spot) {
           const popup = new mapboxgl.Popup({ offset: 25 }).setHTML(
-            '<h3> <a href="/spots/' +
-              spot.id +
-              '">' +
+            "<h3>" +
               spot.name +
-              " Select</a></h3>"
+              "<br>" +
+              spot.address +
+              " <a href='/spots/" +
+              spot.id +
+              "'> View More </a> " +
+              "</h3>"
           );
-
-          //  spot.name +
-          //     "<br>" +
-          //     spot.address +
-          //     " <a href='/spots/'" +
-          //     spot.id +
-          //     "> View More </a> "
 
           var marker1 = new mapboxgl.Marker()
             .setLngLat({ lng: spot.longitude, lat: spot.latitude })

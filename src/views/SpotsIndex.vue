@@ -30,7 +30,7 @@
        </router-link>
      <p><img v-bind:src="spot.image_url"></p>
      Image: {{ spot.image }}
-     <p> <img v-bind:src="spot.image"  </p>
+     <p> <img v-bind:src="spot.image">  </p>
      <hr> 
 
     </div>
