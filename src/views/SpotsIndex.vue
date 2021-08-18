@@ -1,6 +1,53 @@
 <template>
   <div class="spotsindex">
     <router-link to="/spotsmap"> <button> Map View </button>  </router-link> 
+ <!-- ======= Hero Section ======= -->
+  
+
+<!-- 
+    <section id="portfolio" class="portfolio">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Find a Spot </h2>
+       
+        </div>
+
+        <div class="row">
+          <div class="col-lg-12 d-flex justify-content-center">
+            <ul id="portfolio-flters">
+              <li data-filter="*" class="filter-active">All</li>
+              <li data-filter=".filter-app">App</li>
+              <li data-filter=".filter-card">Card</li>
+              <li data-filter=".filter-web">Web</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row portfolio-container">
+
+
+          <div class="col-lg-4 col-md-12  portfolio-item filter-web" v-for="spot in spots">
+            <div class="portfolio-wrap">
+              <img src v-bind:src="spot.image_url" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4> {{ spot.name }}</h4>
+                <p>{{ spot.address }}</p>
+                
+                <div class="portfolio-links">
+                  <a href="assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
+                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section> -->
+
+
     
     <h1>{{ message }}</h1>
 

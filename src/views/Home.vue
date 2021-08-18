@@ -1,20 +1,50 @@
 <template>
   <div class="home">
-    <h1>{{ message }}</h1>
-    <div id='map' style='width: 400px; height: 300px;'></div>
+    <section id="hero">
+    <div class="hero-container">
+      <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+        <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+        <div class="carousel-inner" role="listbox">
+
+          <!-- Slide 1 -->
+          <div class="carousel-item active" id="cover-photo" style="background: url(assets/img/seongho-jang-KGxp5_u5O50-unsplash.jpg">
+            <div class="carousel-container">
+              <div class="carousel-content">
+                <h2 class="animate__animated animate__fadeInDown"> Blade Spots </h2>
+                <p class="animate__animated animate__fadeInUp"> Find skate spots near you </p>
+                <div>
+                  <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+        </div>
+
+
+      </div>
+    </div>
+  </section><!-- End Hero -->
+    
   </div>
 </template>
 
-<style></style>
+<style>
+#cover-photo {
+  background-position: center;
+}
+</style>
 
 <script>
 import axios from "axios";
 import mapboxgl from "mapbox-gl";
 export default {
   data: function () {
-    return {
-      message: "Welcome to Blade Spots App",
-    };
+    return {};
   },
   mounted: function () {},
   methods: {

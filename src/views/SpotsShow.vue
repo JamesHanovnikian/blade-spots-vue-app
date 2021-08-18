@@ -1,13 +1,88 @@
 <template>
   <div class="spots-show">
-    <h2> {{ spot.name }} </h2>
-    
-    <img v-bind:src="spot.image_url"> 
-    <p> Address: {{ spot.address }} </p>
+
+  
+  <main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2> Spot Details </h2>
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li> Spot Details</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <!-- ======= Portfolio Details Section ======= -->
+    <section id="portfolio-details" class="portfolio-details">
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-8">
+            <div class="portfolio-details-slider swiper-container">
+              <div class="swiper-wrapper align-items-center">
+
+                <div class="swiper-slide">
+                  <img  v-bind:src="spot.image_url" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="portfolio-info">
+              <h3> {{ spot.name}}</h3>
+              <ul>
+               
+                <li><strong>Address</strong>: {{ spot.address }}</li>
+                <li><strong>Category</strong>: {{ spot.category }}</li>
+                <li><strong>Bust-level</strong>: {{ spot.bust }}</li>
+                
+                
+              </ul>
+            </div>
+            <div class="portfolio-description">
+              <h2> Description </h2>
+              <p>
+                {{ spot.description }}
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Portfolio Details Section -->
+
+  </main><!-- End #main -->
+
+
+  
+ 
+     
+
+
+
+
     <div id='map' style='width: 400px; height: 300px;'></div>
-    <p> Category: {{ spot.category }} </p>
-    <p> Description: {{ spot.description }} </p>
-    <p> Bust: {{ spot.bust }} </p>
+
+
+
+    <div class="panel panel-default">
+       <div class="panel-header"> <h3> </h3> </div>
+      <div v-for="trick in tricks"> 
+        
+           <div class="panel-body"> {{trick.user_id}}  completed {{ trick.content }} on {{ trick.created_at }}
+           </div>
+      </div>
+    </div>
 
 
     <h2> Add your trick! </h2> 
@@ -19,7 +94,7 @@
     </form> 
 
     <h2> Trick Board: </h2> 
-
+  
     <div v-for="trick in tricks"> 
       <p>  Date Posted: {{ trick.created_at }} | User Id: {{ trick.user_id }} | Trick: {{ trick.content }} </p> 
       <hr> 

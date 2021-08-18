@@ -1,13 +1,16 @@
 <template>
   <div class="SpotsMapIndex">
     <router-link to="/spotsindex"> <button> List View </button> </router-link> 
+    <div id='map' style='width: 800px; height: 600px;'></div>
     <h1>{{ message }}</h1>
     <p> Search by name: <input type="text" v-model="searchTerm"> </p> 
-    <div id='map' style='width: 800px; height: 600px;'></div>
+    
   
-     <div v-for="spot in filterBy(spots, searchTerm ,'category')"> 
+     <!-- <div v-for="spot in filterBy(spots, searchTerm ,'category')"> 
       
-     </div> 
+     </div>  -->
+
+
 
 
    
@@ -15,12 +18,7 @@
 </template>
 
 <style>
-img {
-  width: 200px;
-}
-
 #map {
-  border: black 20px;
 }
 </style>  
 
