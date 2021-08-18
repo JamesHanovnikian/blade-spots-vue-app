@@ -4,7 +4,7 @@
  <!-- ======= Hero Section ======= -->
   
 
-<!-- 
+
     <section id="portfolio" class="portfolio">
       <div class="container">
 
@@ -45,7 +45,7 @@
         </div>
 
       </div>
-    </section> -->
+    </section>
 
 
     
