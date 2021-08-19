@@ -1,10 +1,6 @@
 <template>
   <div class="SpotsMapIndex">
-
-
-    <router-link to="/spotsindex"> <button> List View </button> </router-link> 
-
-<section id="portfolio" class="portfolio">
+    <section id="portfolio" class="portfolio">
       <div class="container">
         <div class="row">
           <div class="col-lg-12 d-flex justify-content-center">
@@ -17,27 +13,28 @@
             </ul>
           </div>
         </div>
+      
+        <router-link to="/spotsindex"> <button> List View </button> </router-link> 
+    <div class="row">
+      <div class="column-12">
+        <div id='map'></div>
+      </div>
+    </div>
+
       </div> 
-    <router-link to="/spotsindex"> <button> List View </button> </router-link> 
-    
-  </section> 
-
-    <div id='map' style='width: 800px; height: 600px;'></div>
-    <h1>{{ message }}</h1>
-    
-    
-  
-
-
-
-
-   
+    </section>
   </div>
 </template>
 
 <style>
 #map {
-  width: 2000px;
+  width: 800px;
+  height: 600px;
+  display: grid;
+  align-items: center;
+}
+section #portfolio {
+  padding-top: 200px;
 }
 </style>  
 

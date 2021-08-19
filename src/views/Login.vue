@@ -18,8 +18,8 @@
           <input type="submit" value="Submit" />
         </form>
       </div> 
-       <div class="col-6">
-      <img id="sidepanel" src="/assets/img/topacid_bilbao.jpeg" alt="">
+       <div id="sidepanel" class="col-6">
+        <img src="/assets/img/topacid_bilbao.jpeg" alt="">
     </div>
     </div> 
    
@@ -31,9 +31,12 @@
   padding-top: 150px;
   padding-bottom: 200px;
 }
-img #sidepanel {
-  max-width: 100px;
-  max-height: 100px;
+#sidepanel img {
+  max-width: 300px;
+  max-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 #login-form {
   display: flex;

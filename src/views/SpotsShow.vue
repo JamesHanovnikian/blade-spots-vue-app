@@ -57,72 +57,37 @@
           </div>
 
         </div>
-
+         <div id='map' style='width: 400px; height: 300px;'></div>
+         <h2> Trick Board: </h2> 
+         <table class="table table-dark table-bordered col-6">
+          <thead> 
+            <tr>
+              <th scope="col-4"> Date Completed </th>
+              <th scope="col-4"> Username </th>
+              <th scope="col-4"> Trick </th>
+      </tr>
+  </thead>
+  <tbody>
+    <tr v-for="trick in tricks">
+      <td> {{ trick.created_at }}</td>
+      <td> {{ trick.user_id }}</td>
+      <td> {{ trick.content }}</td>
+    </tr>
+  </tbody>
+</table>
       </div>
     </section><!-- End Portfolio Details Section -->
 
   </main><!-- End #main -->
 
-
-  
- 
-     
-
-
-
-
-    <div id='map' style='width: 400px; height: 300px;'></div>
-
-
-
-    <div class="panel panel-default">
-       <div class="panel-header"> <h3> </h3> </div>
-      <div v-for="trick in tricks"> 
-        
-           <div class="panel-body"> {{trick.user_id}}  completed {{ trick.content }} on {{ trick.created_at }}
-           </div>
-      </div>
-    </div>
-
-
-    <h2> Add your trick! </h2> 
+  <h2> Add your trick! </h2> 
     <form> 
        <ul>
         <li v-for="error in errors" v-bind:key="error"> {{ error }} </li>
       </ul>
   <input type="text" v-model="newTrickParams.content" /> <button v-on:click="createTrick()"> Add </button>
     </form> 
-
-    <h2> Trick Board: </h2> 
-  
-
-  <table class="table table-dark">
-    <thead>
-    <tr>
-      
-      <th scope="col-4"> Date Completed </th>
-      <th scope="col-4">Username </th>
-      <th scope="col-4">Trick </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-   </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-    </tr>
-  </tbody>
-</table>
+ 
   
   
   
