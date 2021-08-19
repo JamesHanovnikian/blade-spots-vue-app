@@ -1,14 +1,32 @@
 <template>
   <div class="SpotsMapIndex">
+
+
     <router-link to="/spotsindex"> <button> List View </button> </router-link> 
+
+<section id="portfolio" class="portfolio">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 d-flex justify-content-center">
+            <ul id="portfolio-flters">
+              <li v-on:click="turnToggleOff()"> All </li> 
+              <li v-on:click="changeSkatepark()"> Skatepark </li> 
+              <li v-on:click="changeRail()"> Rail </li> 
+              <li v-on:click="changeLedge()"> Ledge </li> 
+              <li v-on:click="changeBank()"> Bank </li> 
+            </ul>
+          </div>
+        </div>
+      </div> 
+    <router-link to="/spotsindex"> <button> List View </button> </router-link> 
+    
+  </section> 
+
     <div id='map' style='width: 800px; height: 600px;'></div>
     <h1>{{ message }}</h1>
-    <p> Search by name: <input type="text" v-model="searchTerm"> </p> 
+    
     
   
-     <!-- <div v-for="spot in filterBy(spots, searchTerm ,'category')"> 
-      
-     </div>  -->
 
 
 
@@ -19,6 +37,7 @@
 
 <style>
 #map {
+  width: 2000px;
 }
 </style>  
 
@@ -33,6 +52,9 @@ export default {
       message: "Find a spot",
       spots: [],
       searchTerm: "",
+      isToggled: false,
+      isToggledRail: false,
+      isToggledLedge: false,
     };
   },
 
@@ -93,6 +115,53 @@ export default {
         zoom: 8, // starting zoom
       });
       console.log(this.spots);
+    },
+    changeSkatepark: function () {
+      console.log("hello");
+      this.isToggled = !this.isToggled;
+      console.log(this.isToggled);
+      if (this.isToggled == true) {
+        this.searchTerm = "skatepark";
+        console.log(this.searchTerm);
+      } else {
+        this.searchTerm = "";
+      }
+    },
+    changeRail: function () {
+      console.log("hello");
+      this.isToggledRail = !this.isToggledRail;
+      console.log(this.isToggledRail);
+      if (this.isToggledRail == true) {
+        this.searchTerm = "rail";
+        console.log(this.searchTerm);
+      } else {
+        this.searchTerm = "";
+      }
+    },
+    changeLedge: function () {
+      console.log("hello");
+      this.isToggledLedge = !this.isToggledLedge;
+      console.log(this.isToggledLedge);
+      if (this.isToggledLedge == true) {
+        this.searchTerm = "ledge";
+        console.log(this.searchTerm);
+      } else {
+        this.searchTerm = "";
+      }
+    },
+    changeBank: function () {
+      console.log("hello");
+      this.isToggledBank = !this.isToggledBank;
+      console.log(this.isToggledBank);
+      if (this.isToggledBank == true) {
+        this.searchTerm = "bank";
+        console.log(this.searchTerm);
+      } else {
+        this.searchTerm = "";
+      }
+    },
+    turnToggleOff: function () {
+      this.searchTerm = "";
     },
   },
 };

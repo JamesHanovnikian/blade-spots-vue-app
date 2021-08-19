@@ -9,13 +9,13 @@
         <div class="carousel-inner" role="listbox">
 
           <!-- Slide 1 -->
-          <div class="carousel-item active" id="cover-photo" style="background: url(assets/img/seongho-jang-KGxp5_u5O50-unsplash.jpg">
+          <div class="carousel-item active" id="cover-photo" style="background: url(/assets/img/coverphoto.jpg) no-repeat bottom center fixed">
             <div class="carousel-container">
               <div class="carousel-content">
                 <h2 class="animate__animated animate__fadeInDown"> Blade Spots </h2>
-                <p class="animate__animated animate__fadeInUp"> Find skate spots near you </p>
+                <p class="animate__animated animate__fadeInUp"> Find the best street skate spots in your area </p>
                 <div>
-                  <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">Read More</a>
+                  <a href="/login" class="btn-get-started animate__animated animate__fadeInUp scrollto"> Log In </a>
                 </div>
               </div>
             </div>

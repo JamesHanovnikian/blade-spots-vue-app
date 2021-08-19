@@ -1,31 +1,38 @@
 <template>
   <div class="signup">
-    <form v-on:submit.prevent="submit()">
-      <h1>Signup</h1>
-      <ul>
-        <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
-      </ul>
-      <div>
-        <label>Username:</label>
-        <input type="text" v-model="newUserParams.username" />
-      </div>
-      <div>
-        <label>Email:</label>
-        <input type="email" v-model="newUserParams.email" />
-      </div>
-      <div>
-        <label>Password:</label>
-        <input type="password" v-model="newUserParams.password" />
-      </div>
-      <div>
-        <label>Password confirmation:</label>
-        <input type="password" v-model="newUserParams.password_confirmation" />
-      </div>
-      <input type="submit" value="Submit" />
-    </form>
+    <div class="container">
+      <form v-on:submit.prevent="submit()">
+        <h1>Signup</h1>
+        <ul>
+          <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
+        </ul>
+        <div>
+          <label>Username:</label>
+          <input type="text" v-model="newUserParams.username" />
+        </div>
+        <div>
+          <label>Email:</label>
+          <input type="email" v-model="newUserParams.email" />
+        </div>
+        <div>
+          <label>Password:</label>
+          <input type="password" v-model="newUserParams.password" />
+        </div>
+        <div>
+          <label>Password confirmation:</label>
+          <input type="password" v-model="newUserParams.password_confirmation" />
+        </div>
+        <input type="submit" value="Submit" />
+      </form>
+    </div> 
   </div>
 </template>
-
+<style>
+form {
+  padding-top: 100px;
+  padding-bottom: 200px;
+}
+</style>
 <script>
 import axios from "axios";
 

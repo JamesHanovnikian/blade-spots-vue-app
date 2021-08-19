@@ -2,7 +2,6 @@
   <div class="spotsindex">
     <router-link to="/spotsmap"> <button> Map View </button>  </router-link> 
  <!-- ======= Hero Section ======= -->
-  
 
 
     <section id="portfolio" class="portfolio">
@@ -16,18 +15,18 @@
         <div class="row">
           <div class="col-lg-12 d-flex justify-content-center">
             <ul id="portfolio-flters">
-              <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-app">App</li>
-              <li data-filter=".filter-card">Card</li>
-              <li data-filter=".filter-web">Web</li>
+              <li v-on:click="turnToggleOff()"> All </li> 
+              <li v-on:click="changeSkatepark()"> Skatepark </li> 
+              <li v-on:click="changeRail()"> Rail </li> 
+              <li v-on:click="changeLedge()"> Ledge </li> 
+              <li v-on:click="changeBank()"> Bank </li> 
             </ul>
           </div>
         </div>
-
+        
+       
         <div class="row portfolio-container">
-
-
-          <div class="col-lg-4 col-md-12  portfolio-item filter-web" v-for="spot in spots">
+          <div class="col-lg-4 col-md-12  portfolio-item filter-web" v-for="spot in filterBy(spots, searchTerm ,'category')">
             <div class="portfolio-wrap">
               <img src v-bind:src="spot.image_url" class="img-fluid" alt="">
               <div class="portfolio-info">
@@ -36,47 +35,20 @@
                 
                 <div class="portfolio-links">
                   <a href="assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                  <a href="portfolio-details.html" title="More Details"><i class="bx bxs-info-circle"></i></a>
+                  
                 </div>
               </div>
             </div>
           </div>
-
         </div>
-
       </div>
     </section>
-
-
-    
-    <h1>{{ message }}</h1>
-
-   <p> Filter By: <button v-on:click="changeSkatepark()"> Skatepark </button> 
-    
-    <button  v-on:click="changeRail()"> Rail </button> <button  v-on:click="changeLedge()"> Ledge </button> <button  v-on:click="changeBank()"> Bank </button> </p>
-    <div v-for="spot in filterBy(spots, searchTerm ,'category')"> 
-     <p> Id: {{ spot.id }}</p>
-     <p> User: {{ spot.user_id }}</p>
-     <p> Spot: {{ spot.name}} </p>
-     <p> Address: {{ spot.address }}</p>  
-     <p> Category: {{ spot.category }} </p> 
-     <p> Bust: {{ spot.bust }}</p>
-       <router-link v-bind:to="`/spots/${spot.id}`"> 
-       <button> Select </button> 
-       </router-link>
-     <p><img v-bind:src="spot.image_url"></p>
-     Image: {{ spot.image }} 
-     <p> <img v-bind:src="spot.image">  </p>
-     <hr> 
-
     </div>
   </div>
 </template>
 
 <style>
-img {
-  width: 200px;
-}
 </style>
 
 <script>
@@ -151,6 +123,9 @@ export default {
       } else {
         this.searchTerm = "";
       }
+    },
+    turnToggleOff: function () {
+      this.searchTerm = "";
     },
     showUserId: function () {},
   },

@@ -1,6 +1,9 @@
 <template>
   <div class="SpotsNew">
-    <!-- <section id="contact" class="contact">
+    
+    
+    
+    <section id="contact" class="contact">
       <div class="container">
         <div class="section-title">
           <h2>Submit your Spot</h2>
@@ -33,50 +36,14 @@
         </div>
 
       </div>
-    </section> -->
-    End Contact Section
-
-
-
-   
-    <<h1> Submit Your Spot </h1>
-    {{selectedFile}}
-    <form v-on:submit.prevent="submit()">
-      <ul> 
-        <li v-for="error in errors" v-bind:key="error"> {{ error }} </li>
-      </ul>
-     <p> Name: 
-      <input type="text" v-model="newSpotParams.name"> </p>
-     <p> Address: 
-      <input type="text" v-model="newSpotParams.address"> </p>
-     <p> Category:
-      <input type="text" v-model="newSpotParams.category"> </p>
-     <p> Description:
-      <input type="text" v-model="newSpotParams.description"> </p>
-      <p> Bust-Level:
-      <input type="text" v-model="newSpotParams.bust"> </p>
-      <p> Image URL:
-      <input type="text" v-model="newSpotParams.image_url"> </p>
-      <div> 
-        Upload an Image: <input type="file" v-on:change="setFile($event)" ref="fileInput">
-      </div>
-
-
-      <input type="submit" value="Submit"> 
-  </form>  
-    
-
-  
-  <button v-on:click="submit()"> Add a spot </button>
-
-Hello 
-
-  </div>
+    </section>
+  </form>   
+ </div>
 </template>
 
 <style>
-.input-picture {
-  text-align: center;
+.section-title {
+  padding-top: 50px;
 }
 </style>
 

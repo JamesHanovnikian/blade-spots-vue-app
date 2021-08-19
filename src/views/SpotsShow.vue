@@ -30,7 +30,7 @@
               <div class="swiper-wrapper align-items-center">
 
                 <div class="swiper-slide">
-                  <img  v-bind:src="spot.image_url" alt="">
+                  <img  v-bind:src="spot.image" alt="">
                 </div>
               </div>
             </div>
@@ -95,10 +95,39 @@
 
     <h2> Trick Board: </h2> 
   
-    <div v-for="trick in tricks"> 
-      <p>  Date Posted: {{ trick.created_at }} | User Id: {{ trick.user_id }} | Trick: {{ trick.content }} </p> 
-      <hr> 
-    </div> 
+
+  <table class="table table-dark">
+    <thead>
+    <tr>
+      
+      <th scope="col-4"> Date Completed </th>
+      <th scope="col-4">Username </th>
+      <th scope="col-4">Trick </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+   </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+    </tr>
+  </tbody>
+</table>
+  
+  
+  
+
+    
 
     <h2> New Comment </h2> 
     <form v-on:submit.prevent="createComment()"> 
@@ -153,7 +182,7 @@ export default {
 
         const map = new mapboxgl.Map({
           container: "map", // container ID
-          style: "mapbox://styles/mapbox/streets-v11", // style URL
+          style: "mapbox://styles/mapbox/navigation-night-v1", // style URL
           center: [this.spot.longitude, this.spot.latitude], // starting position [lng, lat]
           zoom: 11, // starting zoom
         });

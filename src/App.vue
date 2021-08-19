@@ -12,7 +12,7 @@
           <li><a href="/">Home</a></li>
           <li><a href="/login">Log In </a></li>
           <li><a href="/signup"> Sign Up </a></li>
-          <li class="dropdown"><a href="#"><span> Spots </span> <i class="bi bi-chevron-down"></i></a>
+          <li class="dropdown"><a href="/spotsindex"><span> Spots </span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="/spotsindex"> List View </a></li>
               <li><a href="/spotsmap"> Map View </a></li> 
@@ -20,9 +20,6 @@
           </li>
           <li><a href="/newspots"> Add a Spot </a></li>
          
-          
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-          <li><a class="getstarted scrollto" href="#about">Get Started</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -30,6 +27,8 @@
       </div>
     </header><!-- End Header -->
     <router-view/>
+
+    
      <!-- ======= Footer ======= -->
       <footer id="footer">
         <div class="footer-top">
@@ -38,10 +37,9 @@
 
               <div class="col-lg-3 col-md-6">
                 <div class="footer-info">
-                  <h3>Groovin</h3>
+                  <h3>BladeSpots</h3>
                   <p>
-                    A108 Adam Street <br>
-                    NY 535022, USA<br><br>
+                     <br> Chicago, IL <br> 
                     <strong>Phone:</strong> +1 5589 55488 55<br>
                     <strong>Email:</strong> info@example.com<br>
                   </p>
