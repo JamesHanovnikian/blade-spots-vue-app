@@ -4,7 +4,8 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12 d-flex justify-content-center">
-            <ul id="portfolio-flters">
+            <ul id="portfolio-flters"> 
+              <div v-for="spot in filterBy(spots, searchTerm ,'category')"> </div>
               <li v-on:click="turnToggleOff()"> All </li> 
               <li v-on:click="changeSkatepark()"> Skatepark </li> 
               <li v-on:click="changeRail()"> Rail </li> 

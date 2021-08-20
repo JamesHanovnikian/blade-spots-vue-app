@@ -28,7 +28,7 @@
         <div class="row portfolio-container">
           <div class="col-lg-4 col-md-12  portfolio-item filter-web" v-for="spot in filterBy(spots, searchTerm ,'category')">
             <div class="portfolio-wrap">
-              <img src v-bind:src="spot.image_url" class="img-fluid" alt="">
+              <img id="portfolio-imgs" src v-bind:src="spot.image_url" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4> {{ spot.name }}</h4>
                 <p>{{ spot.address }}</p>
@@ -49,6 +49,9 @@
 </template>
 
 <style>
+#portfolio-imgs {
+  height: 300px;
+}
 </style>
 
 <script>
