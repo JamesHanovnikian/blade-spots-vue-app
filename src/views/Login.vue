@@ -26,6 +26,7 @@
         </div>
       </div>
     </section>
+   
   </div>
 </template>
 <style>
@@ -62,12 +63,16 @@ form #form-center {
 
 <script>
 import axios from "axios";
+import Multiselect from "vue-multiselect";
 
 export default {
+  components: { Multiselect },
   data: function () {
     return {
       newSessionParams: {},
       errors: [],
+      value: null,
+      options: ["Rail", "Skatepark", "Ledge"],
     };
   },
   methods: {

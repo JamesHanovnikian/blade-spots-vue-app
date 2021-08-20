@@ -1,10 +1,14 @@
 import Vue from 'vue'
 import Vue2Filters from 'vue2-filters'
+
 Vue.use(Vue2Filters)
+
 
 import App from './App.vue'
 import router from './router'
 import axios from 'axios'
+import Multiselect from 'vue-multiselect'
+
 axios.defaults.baseURL = process.env.NODE_ENV === "development" ? "http://localhost:3000" : "/";
 var jwt = localStorage.getItem("jwt");
 if (jwt) {

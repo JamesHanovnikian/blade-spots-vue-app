@@ -16,6 +16,8 @@
             </ul>
           </div>
         </div>
+
+     
       
         <router-link to="/spotsindex"> <button> List View </button> </router-link> 
     <div class="row">

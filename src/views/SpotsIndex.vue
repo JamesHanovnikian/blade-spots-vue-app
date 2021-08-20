@@ -1,6 +1,6 @@
 <template>
   <div class="spotsindex">
-    <router-link to="/spotsmap"> <button> Map View </button>  </router-link> 
+   
  <!-- ======= Hero Section ======= -->
 
 

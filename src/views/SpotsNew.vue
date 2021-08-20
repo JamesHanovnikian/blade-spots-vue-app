@@ -19,7 +19,10 @@
               </div>
             </div>
              <div class="col-mdform-group mt-3">
-              <input type="text" v-model="newSpotParams.category"  class="form-control" name="subject" id="subject" placeholder="Category" >
+                <div>
+                  <multiselect v-model="newSpotParams.category" :options="options" :searchable="false" :close-on-select="true" :show-labels="false" placeholder="Category"></multiselect>
+                </div>
+              <!-- <input type="text" v-model="newSpotParams.category"  class="form-control" name="subject" id="subject" placeholder="Category" > -->
             </div>
             <div class="form-group mt-3">
               <input type="text"  v-model="newSpotParams.bust" class="form-control" name="subject" id="subject" placeholder="Bust-level (none, low, med, high)">
@@ -49,12 +52,17 @@
 
 <script>
 import axios from "axios";
+import Multiselect from "vue-multiselect";
+
 export default {
+  components: { Multiselect },
   data: function () {
     return {
       errors: [],
       newSpotParams: {},
       selectedFile: null,
+      value: null,
+      options: ["Rail", "Skatepark", "Ledge"],
     };
   },
   created: function () {
