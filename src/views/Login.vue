@@ -1,9 +1,10 @@
 <template>
   <div class="login">
     <section id="contact" class="contact">
-      <div class="container">
+      <div class="container-login">
         <div class="section-title">
           <h2>Log In</h2>
+          <p> <a href="/signup" class="btn btn-success"> Sign Up</a></p>
         </div>
         <div id="main-form" class="form">
           <form class="form-center" v-on:submit.prevent="submit()">
@@ -20,7 +21,7 @@
                 <input type="password" name="name" class="form-control" id="name" placeholder="password" v-model="newSessionParams.password">
                 </div>
            </div>
-            <div id="submit-button" class="text-center"> <input type="submit" value="Login" /></div>
+          <div id="submit-button" class="text-center"> <input class="btn btn-success"type="submit" value="Login" /></div>
           </form>
         </div>
       </div>
@@ -28,6 +29,10 @@
   </div>
 </template>
 <style>
+form #form-center {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
 #submit-button {
   padding-top: 40px;
 }
@@ -47,7 +52,13 @@
 #email-row {
   align-items: center;
 }
+
+.container-login {
+  padding: 0 200px;
+}
 </style>
+
+
 
 <script>
 import axios from "axios";

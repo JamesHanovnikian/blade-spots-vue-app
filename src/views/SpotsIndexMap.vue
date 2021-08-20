@@ -3,7 +3,7 @@
     <section id="portfolio" class="portfolio">
       <div class="container">
         <div class="row">
-          <div class="col-lg-12 d-flex justify-content-center">
+          <div id= "links" class="col-lg-12 d-flex justify-content-center">
             <ul id="portfolio-flters"> 
               <div v-for="spot in filterBy(spots, searchTerm ,'category')"> </div>
               <li v-on:click="turnToggleOff()"> All </li> 
@@ -11,6 +11,8 @@
               <li v-on:click="changeRail()"> Rail </li> 
               <li v-on:click="changeLedge()"> Ledge </li> 
               <li v-on:click="changeBank()"> Bank </li> 
+              <li v-on:click="changeBank()"> || </li> 
+              <li> Back To List View </li> 
             </ul>
           </div>
         </div>
@@ -18,7 +20,7 @@
         <router-link to="/spotsindex"> <button> List View </button> </router-link> 
     <div class="row">
       <div class="column-12">
-        <div id='map'></div>
+        <div class id='map'></div>
       </div>
     </div>
 
@@ -28,6 +30,9 @@
 </template>
 
 <style>
+#links {
+  padding-top: 50px;
+}
 #map {
   width: 800px;
   height: 600px;

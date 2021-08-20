@@ -31,7 +31,7 @@
               Upload a picture: <input type="file" v-on:change="setFile($event)" ref="fileInput"> 
             </div>
             
-            <div class="text-center"> <input type="submit" value="Submit"></div>
+            <div class="text-center"> <input class="btn btn-success" type="submit" value="Submit"></div>
           </form>
         </div>
 

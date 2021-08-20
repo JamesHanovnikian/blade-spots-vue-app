@@ -40,33 +40,30 @@
                   <h3>BladeSpots</h3>
                   <p>
                      <br> Chicago, IL <br> 
-                    <strong>Phone:</strong> +1 5589 55488 55<br>
-                    <strong>Email:</strong> info@example.com<br>
                   </p>
                   
                 </div>
               </div>
 
               <div class="col-lg-2 col-md-6 footer-links">
-                <h4>Useful Links</h4>
+                <h4></h4>
                 <ul>
-                  <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-                  <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-                  <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-                  <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-                  <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+                  <li><i class="bx bx-chevron-right"></i> <a href="/">Home</a></li>
+                  <li><i class="bx bx-chevron-right"></i> <a href="/login"> Login </a></li>
+                  <li><i class="bx bx-chevron-right"></i> <a href="/signup"> Signup</a></li>
+                  <li><i class="bx bx-chevron-right"></i> <a href="/spotsindex"> View Spots </a></li>
+                  <li><i class="bx bx-chevron-right"></i> <a href="/newspots"> Add a spot </a></li>
                 </ul>
               </div>
 
               <div class="col-lg-3 col-md-6 footer-links">
-                <h4>Our Services</h4>
+                <h4>Useful Links </h4>
                 <ul>
-                  <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-                  <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-                  <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-                  <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-                  <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
-                </ul>
+                  <li><i class="bx bx-chevron-right"></i> <a href="http://www.oneblademag.com/"> ONEblademagazine</a></li>
+                  <li><i class="bx bx-chevron-right"></i> <a href="https://rollerwarehouse.com/"> Roller Warehouse </a></li>
+                  <li><i class="bx bx-chevron-right"></i> <a href="https://www.facebook.com/groups/chicagobladescene"> Rollerblading Facebook Group </a></li>
+                  
+                </ul> 
               </div>
 
               <div class="col-lg-4 col-md-6 footer-newsletter">

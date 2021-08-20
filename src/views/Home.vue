@@ -14,7 +14,7 @@
               <div class="carousel-content">
                 <h2 class="animate__animated animate__fadeInDown"> Blade Spots </h2>
                 <p class="animate__animated animate__fadeInUp"> Find the best street skate spots in your area </p>
-                <div>
+                <div>1
                   <a href="/login" class="btn-get-started animate__animated animate__fadeInUp scrollto"> Log In </a>
                 </div>
               </div>
