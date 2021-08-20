@@ -46,7 +46,6 @@
         </div> 
       </section> 
       <div class="container"> 
-        {{ tricks }}
         <div class="row">
           <div class="col-6-lg">
             <div id='map' style='width: 400px; height: 300px;'></div>
