@@ -10,8 +10,6 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a href="/">Home</a></li>
-          <li><a href="/login">Log In </a></li>
-          <li><a href="/signup"> Sign Up </a></li>
           <li class="dropdown"><a href="/spotsindex"><span> Spots </span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="/spotsindex"> List View </a></li>
@@ -19,6 +17,10 @@
             </ul>
           </li>
           <li><a href="/newspots"> Add a Spot </a></li>
+          <li><a href="/login">Log In </a></li>
+          <li><a href="/logout">Log Out </a></li>
+
+          <li><a href="/signup"> Sign Up </a></li>
          
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>

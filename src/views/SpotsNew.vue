@@ -20,13 +20,13 @@
             </div>
              <div class="col-mdform-group mt-3">
                 <div>
-                  <multiselect v-model="newSpotParams.category" :options="options" :searchable="false" :close-on-select="true" :show-labels="false" placeholder="Category"></multiselect>
+                  <label class="typo__label"> Category: </label> <multiselect v-model="newSpotParams.category" :options ="options" :searchable="false" :close-on-select="true" :show-labels="false" placeholder="Select Category"></multiselect>
                 </div>
-              <!-- <input type="text" v-model="newSpotParams.category"  class="form-control" name="subject" id="subject" placeholder="Category" > -->
             </div>
-            <div class="form-group mt-3">
-              <input type="text"  v-model="newSpotParams.bust" class="form-control" name="subject" id="subject" placeholder="Bust-level (none, low, med, high)">
-            </div>
+              <div class="form-group mt-3">
+                <label class="bust-level"> Bust-Level: </label>
+                <multiselect v-model="newSpotParams.bust" :options="optionsBust" :searchable="false" :close-on-select="true" :show-labels="false" placeholder="Select Bust-level"> </multiselect>
+              </div>
             <div class="form-group mt-3">
               <textarea class="form-control" v-model="newSpotParams.description"  name="description" rows="5" placeholder="Description" ></textarea>
             </div>
@@ -63,6 +63,7 @@ export default {
       selectedFile: null,
       value: null,
       options: ["Rail", "Skatepark", "Ledge"],
+      optionsBust: ["None", "Low", "Medium", "High"],
     };
   },
   created: function () {

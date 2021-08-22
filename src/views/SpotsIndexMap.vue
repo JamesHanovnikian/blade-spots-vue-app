@@ -1,28 +1,21 @@
 <template>
   <div class="SpotsMapIndex">
-    <section id="portfolio" class="portfolio">
-      <div class="container">
-        <div class="row">
-          <div id= "links" class="col-lg-12 d-flex justify-content-center">
-            <ul id="portfolio-flters"> 
-              <div v-for="spot in filterBy(spots, searchTerm ,'category')"> </div>
-              <li v-on:click="turnToggleOff()"> All </li> 
-              <li v-on:click="changeSkatepark()"> Skatepark </li> 
-              <li v-on:click="changeRail()"> Rail </li> 
-              <li v-on:click="changeLedge()"> Ledge </li> 
-              <li v-on:click="changeBank()"> Bank </li> 
-              <li v-on:click="changeBank()"> || </li> 
-              <li> Back To List View </li> 
-            </ul>
-          </div>
-        </div>
-
-     
-      
-        <router-link to="/spotsindex"> <button> List View </button> </router-link> 
+    
+    
+    <div id='filters' class='ui-select'>
+    <div><input type='checkbox' checked=checked class='filter'
+              name='filter' id='skatepark' value='skatepark'/><label for='restaurant'>Skateparks</label></div>
+    <div><input type='checkbox' checked=checked class='filter'
+              name='filter' id='rail' value='rail'/><label for='bicycle'>Rails </label></div>
+    <div><input type='checkbox' checked=checked class='filter'
+              name='filter' id='ledge' value='ledge'/><label for='bar'> Ledges </label></div>
+  </div>
+    <router-link to="/spotsindex"> <button> List View </button> </router-link> 
     <div class="row">
       <div class="column-12">
         <div class id='map'></div>
+        
+    </div>
       </div>
     </div>
 
@@ -32,6 +25,28 @@
 </template>
 
 <style>
+#filters {
+  padding-top: 100px;
+}
+.filter-ctrl {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1;
+}
+.filter-ctrl input[type="text"] {
+  font: 12px/20px "Helvetica Neue", Arial, Helvetica, sans-serif;
+  width: 100%;
+  border: 0;
+  background-color: #fff;
+  margin: 0;
+  color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  width: 180px;
+}
+
 #links {
   padding-top: 50px;
 }
@@ -79,6 +94,17 @@ export default {
         zoom: 10, // starting zoom
       });
       map.addControl(new mapboxgl.NavigationControl());
+      map.addControl(
+        new mapboxgl.GeolocateControl({
+          positionOptions: {
+            enableHighAccuracy: true,
+          },
+          // When active the map will receive updates to the device's location as it changes.
+          trackUserLocation: true,
+          // Draw an arrow next to the location dot to indicate which direction the device is heading.
+          showUserHeading: true,
+        })
+      );
 
       axios.get("/spots").then((response) => {
         console.log("spots index", response.data);
@@ -88,16 +114,21 @@ export default {
         // const el = document.createElement("div");
         // el.id = "marker";
         this.spots.forEach(function (spot) {
-          const popup = new mapboxgl.Popup({ offset: 25 }).setHTML(
+          const popup = new mapboxgl.Popup({ offset: 10 }).setHTML(
             "<h3>" +
               spot.name +
+              "</h3>" +
               "<br>" +
               spot.address +
-              " <a href='/spots/" +
-              spot.id +
-              "'>  View More </a> " +
               "<br>" +
-              "</h3>"
+              " <button class='btn btn-primary'> <a href='/spots/" +
+              spot.id +
+              "'>  View More </a> </button> " +
+              "<br>" +
+              "<br>" +
+              "<img src=" +
+              spot.image_url +
+              " height='125px'>"
           );
 
           var marker1 = new mapboxgl.Marker()

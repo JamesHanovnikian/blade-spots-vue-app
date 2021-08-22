@@ -3,6 +3,10 @@
    
  <!-- ======= Hero Section ======= -->
 
+ <!-- 1. use haversine distance to calculate the distance between given point and all points in database,
+     2. Push that all into array of hashes. 
+     3. Order in ascending order -->
+
 
     <section id="portfolio" class="portfolio">
       <div class="container">
@@ -26,7 +30,7 @@
         
        
         <div class="row portfolio-container">
-          <div class="col-lg-4 col-md-12  portfolio-item filter-web" v-for="spot in filterBy(spots, searchTerm ,'category')">
+          <div class="col-lg-4 col-md-12  portfolio-item filter-web" v-for="spot in filterBy(spots, searchTerm ,'category')"> 
             <div class="portfolio-wrap">
               <img id="portfolio-imgs" src v-bind:src="spot.image_url" class="img-fluid" alt="">
               <div class="portfolio-info">
@@ -34,8 +38,8 @@
                 <p>{{ spot.address }}</p>
                 
                 <div class="portfolio-links">
-                  <a href="assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" title="More Details"><i class="bx bxs-info-circle"></i></a>
+                
+                  <a href="/spots/" title="More Details"><i class="bx bxs-info-circle"></i></a>
                   
                 </div>
               </div>

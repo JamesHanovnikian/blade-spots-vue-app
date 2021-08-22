@@ -8,13 +8,13 @@
 
         <div class="carousel-inner" role="listbox">
 
-          <!-- Slide 1 -->
-          <div class="carousel-item active" id="cover-photo" style="background: url(/assets/img/coverphoto.jpg) no-repeat bottom center fixed">
+          
+          <div class="carousel-item active" id="cover-photo" style="background: url(/assets/img/cover-photo-small.jpg) no-repeat bottom center fixed">
             <div class="carousel-container">
               <div class="carousel-content">
                 <h2 class="animate__animated animate__fadeInDown"> Blade Spots </h2>
                 <p class="animate__animated animate__fadeInUp"> Find the best street skate spots in your area </p>
-                <div>1
+                <div>
                   <a href="/login" class="btn-get-started animate__animated animate__fadeInUp scrollto"> Log In </a>
                 </div>
               </div>
@@ -34,6 +34,7 @@
 </template>
 
 <style>
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
 #cover-photo {
   background-position: center;
 }
