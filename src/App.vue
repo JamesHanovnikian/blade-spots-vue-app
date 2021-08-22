@@ -12,8 +12,8 @@
           <li><a href="/">Home</a></li>
           <li class="dropdown"><a href="/spotsindex"><span> Spots </span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="/spotsindex"> List View </a></li>
-              <li><a href="/spotsmap"> Map View </a></li> 
+              <li> <router-link to="/spotsindex"> List View </router-link> </li> 
+              <li><router-link to="/spotsmap"> Map View </router-link></li> 
             </ul>
           </li>
           <li><a href="/newspots"> Add a Spot </a></li>

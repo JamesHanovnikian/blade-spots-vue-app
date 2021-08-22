@@ -27,6 +27,10 @@
             </ul>
           </div>
         </div>
+
+        
+      <p> Enter your current address: <input type="text" v-model="currentAddress" placeholder="Current Location"> <button v-on:click="submitCurrentAddress()"> Search </button></p> {{ currentAddress }}
+
         
        
         <div class="row portfolio-container">
@@ -39,7 +43,9 @@
                 
                 <div class="portfolio-links">
                 
-                  <a href="/spots/" title="More Details"><i class="bx bxs-info-circle"></i></a>
+                  <router-link v-bind:to="`/spots/${spot.id}`">
+                  <i class="bx bxs-info-circle"> </i>
+                  </router-link>
                   
                 </div>
               </div>
@@ -74,6 +80,7 @@ export default {
       isToggled: false,
       isToggledRail: false,
       isToggledLedge: false,
+      currentAddress: "",
     };
   },
   mounted: function () {
@@ -131,8 +138,13 @@ export default {
         this.searchTerm = "";
       }
     },
+
     turnToggleOff: function () {
       this.searchTerm = "";
+    },
+    submitCurrentAddress: function () {
+      console.log("in submit function!");
+      console.log(this.currentAddress);
     },
     showUserId: function () {},
   },

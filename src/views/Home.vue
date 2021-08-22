@@ -9,7 +9,7 @@
         <div class="carousel-inner" role="listbox">
 
           
-          <div class="carousel-item active" id="cover-photo" style="background: url(/assets/img/cover-photo-small.jpg) no-repeat bottom center fixed">
+          <div class="carousel-item active" id="cover-photo">
             <div class="carousel-container">
               <div class="carousel-content">
                 <h2 class="animate__animated animate__fadeInDown"> Blade Spots </h2>
@@ -28,7 +28,7 @@
 
       </div>
     </div>
-  </section><!-- End Hero -->
+  </section>
     
   </div>
 </template>

@@ -43,17 +43,49 @@
             </div>
           </div>
         </div>
+        <div class="row" id="map-and-trick">
+            <div class="col-6">
+              <div class="text-white bg-dark  mb-3">
+              <div class="card-body">
+                <h5 class="card-title"> Trick Board</h5>
+                <h6 class="card-subtitle mb-2 text-muted"> If you've been to this spot, let us know what trick you completed! </h6>
+                <p class="card-text">  
+                <input type="text" v-model="newTrickParams.content" style = "width:30rem;"/> 
+                <a href="#" class="card-link"> <button class="btn btn-primary" v-on:click="createTrick();"> Add </button> </a>
+                </p>
+                <div v-for="trick in tricks">
+                  <ul>
+                    <li> <p class="card-text"> 
+                  {{ trick.user.username }} completed {{ trick.content }} on {{ trick.created_at }}</p> 
+                    </li> 
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div id='map' style='width: 500px; height: 400px;'></div>
+          </div>
+        </div>
+          
+
         </div> 
       </section> 
-      <div class="container"> 
+
+    
+    <!-- <div class="container"> 
         <div class="row">
           <div class="col-6-lg">
             <div id='map' style='width: 400px; height: 300px;'></div>
           </div>
           <div class="col-6-lg">
             <h3> Trick Board </h3> 
-            <p> Been to this spot? Add a trick below</p>
-            <p> <input type="text" v-model="newTrickParams.content" /> <button v-on:click="createTrick()"> Post </button> </p> 
+            <p> Been to this spot? Add a trick below </p>
+            <form v-on:submit.prevent="createTrick()">
+              <p> <input type="text" v-model="newTrickParams.content" /> 
+             <input type="submit" value="Post"> </p> 
+            </form>
+            
             <table class="table table-dark table-bordered col-6">
           <thead> 
          <tr>
@@ -72,43 +104,9 @@
       </table>
           </div>
         </div>
-      </div>
-  
-      
-    <!-- End Portfolio Details Section -->
-
-  </main><!-- End #main -->
-
-  
+      </div> -->
+    </main>
  
-  
-  <h2> New Comment </h2> 
-    <form v-on:submit.prevent="createComment()"> 
-       <ul>
-        <li v-for="error in errors" v-bind:key="error"> {{ error }} </li>
-      </ul>
-      <input type="text" v-model="newCommentParams.content" /> <button v-on:click="createComment()"> Post </button>
-
-
-    </form> 
-  
-
-    
-
-    <h2> New Comment </h2> 
-    <form v-on:submit.prevent="createComment()"> 
-       <ul>
-        <li v-for="error in errors" v-bind:key="error"> {{ error }} </li>
-      </ul>
-      <input type="text" v-model="newCommentParams.content" /> <button v-on:click="createComment()"> Post </button>
-
-
-    </form> 
-    <h2> Comments: </h2>
-    <div v-for="comment in comments"> 
-     <p>  Date Posted: {{ comment.created_at }} | User Id: {{ comment.user_id }} | Comment: {{ comment.content }} </p> 
-     <hr>
-
      
     </div>
     
@@ -118,6 +116,10 @@
 <style>
 input[type="text"] {
   width: 600px;
+}
+
+#map-and-trick {
+  padding-top: 75px;
 }
 </style>
 
@@ -209,7 +211,8 @@ export default {
         )
         .then((response) => {
           console.log("adding a new trick", response.data);
-          // this.$router.push("/spots/");
+          // location.reload();
+          // this.$router.push("/spots/92");
         });
     },
   },
