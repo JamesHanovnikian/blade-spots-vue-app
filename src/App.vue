@@ -10,15 +10,15 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a href="/">Home</a></li>
-          <li class="dropdown"><a href="/spotsindex"><span> Spots </span> <i class="bi bi-chevron-down"></i></a>
+          <li class="dropdown"><a href="/spots"><span> Spots </span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li> <router-link to="/spotsindex"> List View </router-link> </li> 
+              <li> <router-link to="/spots"> List View </router-link> </li> 
               <li><router-link to="/spotsmap"> Map View </router-link></li> 
             </ul>
           </li>
-          <li><a href="/newspots"> Add a Spot </a></li>
+          <li><a href="/spots/new"> Add a Spot </a></li>
           <li><a href="/login">Log In </a></li>
-          <li><a href="/logout">Log Out </a></li>
+          <li><router-link v-if="" to="/logout"> Log Out </router-link> </li>
 
           <li><a href="/signup"> Sign Up </a></li>
          
@@ -27,7 +27,7 @@
       </nav><!-- .navbar -->
 
       </div>
-    </header><!-- End Header -->
+    </header>
     <router-view/>
     
         
@@ -98,7 +98,15 @@
   </div>
 </template>
 <script>
-export default {};
+export default {
+  isLoggedIn: function () {
+    if (localStorage.getItem("jwt")) {
+      return true;
+    } else {
+      return false;
+    }
+  },
+};
 </script>
 
 <style>

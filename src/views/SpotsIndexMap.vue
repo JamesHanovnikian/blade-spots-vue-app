@@ -1,26 +1,10 @@
 <template>
-  <div class="SpotsMapIndex">
-    
-    
-    <div id='filters' class='ui-select'>
-    <div><input type='checkbox' checked=checked class='filter'
-              name='filter' id='skatepark' value='skatepark'/><label for='restaurant'>Skateparks</label></div>
-    <div><input type='checkbox' checked=checked class='filter'
-              name='filter' id='rail' value='rail'/><label for='bicycle'>Rails </label></div>
-    <div><input type='checkbox' checked=checked class='filter'
-              name='filter' id='ledge' value='ledge'/><label for='bar'> Ledges </label></div>
-  </div>
-    <router-link to="/spotsindex"> <button> List View </button> </router-link> 
+  <div class="SpotsMapIndex"> 
     <div class="row">
-      <div class="column-12">
+      <div id="main-div" class="column-12">
         <div class id='map'></div>
-        
-    </div>
       </div>
     </div>
-
-      </div> 
-    </section>
   </div>
 </template>
 
@@ -50,11 +34,15 @@
 #links {
   padding-top: 50px;
 }
+
+#main-div {
+  padding: 100px;
+}
+
 #map {
-  width: 800px;
-  height: 600px;
-  display: grid;
-  align-items: center;
+  width: 700px;
+  height: 90vh;
+  margin: auto;
 }
 section #portfolio {
   padding-top: 200px;
@@ -127,7 +115,7 @@ export default {
               "<br>" +
               "<br>" +
               "<img src=" +
-              spot.image_url +
+              spot.image +
               " height='125px'>"
           );
 

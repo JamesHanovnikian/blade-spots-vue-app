@@ -1,22 +1,11 @@
 <template>
   <div class="spotsindex">
-   
- <!-- ======= Hero Section ======= -->
-
- <!-- 1. use haversine distance to calculate the distance between given point and all points in database,
-     2. Push that all into array of hashes. 
-     3. Order in ascending order -->
-
-
-    <section id="portfolio" class="portfolio">
+   <section id="portfolio" class="portfolio">
       <div class="container">
-
         <div class="section-title">
           <h2>Find a Spot </h2>
-       
-        </div>
-
-        <div class="row">
+       </div>
+       <div class="row">
           <div class="col-lg-12 d-flex justify-content-center">
             <ul id="portfolio-flters">
               <li v-on:click="turnToggleOff()"> All </li> 
@@ -26,17 +15,11 @@
               <li v-on:click="changeBank()"> Bank </li> 
             </ul>
           </div>
-        </div>
-
-        
-      <p> Enter your current address: <input type="text" v-model="currentAddress" placeholder="Current Location"> <button v-on:click="submitCurrentAddress()"> Search </button></p> {{ currentAddress }}
-
-        
-       
+        </div>       
         <div class="row portfolio-container">
           <div class="col-lg-4 col-md-12  portfolio-item filter-web" v-for="spot in filterBy(spots, searchTerm ,'category')"> 
             <div class="portfolio-wrap">
-              <img id="portfolio-imgs" src v-bind:src="spot.image_url" class="img-fluid" alt="">
+              <img id="portfolio-imgs" src v-bind:src="spot.image" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4> {{ spot.name }}</h4>
                 <p>{{ spot.address }}</p>
@@ -97,10 +80,8 @@ export default {
     changeSkatepark: function () {
       console.log("hello");
       this.isToggled = !this.isToggled;
-      console.log(this.isToggled);
       if (this.isToggled == true) {
         this.searchTerm = "skatepark";
-        console.log(this.searchTerm);
       } else {
         this.searchTerm = "";
       }
@@ -111,18 +92,14 @@ export default {
       console.log(this.isToggledRail);
       if (this.isToggledRail == true) {
         this.searchTerm = "rail";
-        console.log(this.searchTerm);
       } else {
         this.searchTerm = "";
       }
     },
     changeLedge: function () {
-      console.log("hello");
       this.isToggledLedge = !this.isToggledLedge;
-      console.log(this.isToggledLedge);
       if (this.isToggledLedge == true) {
         this.searchTerm = "ledge";
-        console.log(this.searchTerm);
       } else {
         this.searchTerm = "";
       }
@@ -130,10 +107,8 @@ export default {
     changeBank: function () {
       console.log("hello");
       this.isToggledBank = !this.isToggledBank;
-      console.log(this.isToggledBank);
       if (this.isToggledBank == true) {
         this.searchTerm = "bank";
-        console.log(this.searchTerm);
       } else {
         this.searchTerm = "";
       }
@@ -142,10 +117,7 @@ export default {
     turnToggleOff: function () {
       this.searchTerm = "";
     },
-    submitCurrentAddress: function () {
-      console.log("in submit function!");
-      console.log(this.currentAddress);
-    },
+
     showUserId: function () {},
   },
 };

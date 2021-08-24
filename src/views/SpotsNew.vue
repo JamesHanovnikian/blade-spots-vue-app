@@ -89,7 +89,10 @@ export default {
         .post("/spots", formData)
         .then((response) => {
           console.log("spots create", response.data);
-          this.$router.push(`"/spots/${spot.id}"`);
+          this.newSpotParams.name = "";
+          this.newSpotParams.address = "";
+          this.$refs.fileInput.value = "";
+          this.$router.push("/spots");
         })
         .catch((error) => {
           console.log("Spot Create Error", error.response);

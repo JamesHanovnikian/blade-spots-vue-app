@@ -67,50 +67,11 @@
             <div id='map' style='width: 500px; height: 400px;'></div>
           </div>
         </div>
-          
-
-        </div> 
-      </section> 
-
-    
-    <!-- <div class="container"> 
-        <div class="row">
-          <div class="col-6-lg">
-            <div id='map' style='width: 400px; height: 300px;'></div>
-          </div>
-          <div class="col-6-lg">
-            <h3> Trick Board </h3> 
-            <p> Been to this spot? Add a trick below </p>
-            <form v-on:submit.prevent="createTrick()">
-              <p> <input type="text" v-model="newTrickParams.content" /> 
-             <input type="submit" value="Post"> </p> 
-            </form>
-            
-            <table class="table table-dark table-bordered col-6">
-          <thead> 
-         <tr>
-            <th scope="col-4"> Date Completed </th>
-            <th scope="col-4"> Username </th>
-            <th scope="col-4"> Trick </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="trick in tricks">
-            <td> {{ trick.created_at }}</td>
-            <td> {{ trick.user.username}} </td>
-            <td> {{ trick.content }}</td>
-          </tr>
-        </tbody>
-      </table>
-          </div>
-        </div>
-      </div> -->
-    </main>
- 
-     
-    </div>
-    
+      </div> 
+    </section>
+  </main>
   </div>
+</div>
 </template>
 
 <style>

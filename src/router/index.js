@@ -36,10 +36,16 @@ const routes = [
     name: 'Logout',
     component: Logout
   },
+
   {
-    path: '/spotsindex',
+    path: '/spots',
     name: 'SpotsIndex',
     component: SpotsIndex
+  },
+  {
+    path: '/spots/new',
+    name: 'SpotsNew',
+    component: SpotsNew
   },
   {
     path: '/spotsMap',
@@ -51,12 +57,6 @@ const routes = [
     name: 'SpotsShow',
     component: SpotsShow
   },
-  {
-    path: '/newspots/',
-    name: 'SpotsNew',
-    component: SpotsNew
-  },
-
 ]
 
 const router = new VueRouter({

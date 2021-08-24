@@ -1,11 +1,16 @@
 <template>
   <div class="login">
-    <section id="contact" class="contact">
+    
+    
+  <div class="row"> 
+    <div class="section-title">
+      <h2>Log In</h2>
+      <p> Sign Up to Log In and view the best spots </p>
+      <p> <a href="/signup" class="btn btn-success"> Sign Up</a></p>
+    </div>
+    <div class="col-6">
+      <section id="contact" class="contact">
       <div class="container-login">
-        <div class="section-title">
-          <h2>Log In</h2>
-          <p> <a href="/signup" class="btn btn-success"> Sign Up</a></p>
-        </div>
         <div id="main-form" class="form">
           <form class="form-center" v-on:submit.prevent="submit()">
             <div id="email-row" class="row">
@@ -26,10 +31,29 @@
         </div>
       </div>
     </section>
+    </div>
+    <div id="side-pic"class="col-6">
+      
+
+      </div>
+    </div>
+
+  </div>
+    
    
   </div>
 </template>
 <style>
+#side-pic {
+  background-image: url("/assets/img/topacid_bilbao.jpeg");
+  display: grid;
+  align-items: center;
+  background-size: cover;
+  height: 400px;
+  background-color: rgba(17, 17, 17, 0.8);
+  background-image: center;
+  opacity: 0.98;
+}
 form #form-center {
   padding-top: 50px;
   padding-bottom: 50px;
