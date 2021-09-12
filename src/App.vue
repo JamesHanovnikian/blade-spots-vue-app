@@ -3,9 +3,9 @@
     <header id="header" class="fixed-top d-flex align-items-center">
       <div class="container d-flex align-items-center justify-content-between">
 
-      <h1 class="logo"><a href="/">BladeSpots</a></h1>
+      <h1 class="logo">
       <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      <a href="/"><img src="assets/img/bladespotslogonew1.png"  alt="" class="img-fluid" id="logo-image"> </a></h1>
 
       <nav id="navbar" class="navbar">
         <ul>
@@ -17,7 +17,8 @@
             </ul>
           </li>
           <li><a href="/spots/new"> Add a Spot </a></li>
-          <li><a href="/login">Log In </a></li>
+          <div v-if="isLoggedIn()"> <li><a href="/login">Log In </a></li>
+          </div> 
           <li><router-link v-if="" to="/logout"> Log Out </router-link> </li>
 
           <li><a href="/signup"> Sign Up </a></li>
@@ -99,12 +100,17 @@
 </template>
 <script>
 export default {
-  isLoggedIn: function () {
-    if (localStorage.getItem("jwt")) {
-      return true;
-    } else {
-      return false;
-    }
+  data: function () {
+    return {};
+  },
+  methods: {
+    isLoggedIn: function () {
+      if (localStorage.getItem("jwt")) {
+        return false;
+      } else {
+        return true;
+      }
+    },
   },
 };
 </script>

@@ -12,7 +12,7 @@
           <div class="carousel-item active" id="cover-photo">
             <div class="carousel-container">
               <div class="carousel-content">
-                <h2 class="animate__animated animate__fadeInDown"> Blade Spots </h2>
+                <h2 class="animate__animated animate__fadeInDown"> BladeSpots </h2>
                 <p class="animate__animated animate__fadeInUp"> All of the best skate spots in one location </p>
                 <div>
                   <a href="/login" class="btn-get-started animate__animated animate__fadeInUp scrollto"> Log In </a>

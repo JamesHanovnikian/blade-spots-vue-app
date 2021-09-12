@@ -46,10 +46,11 @@
         <div class="row" id="map-and-trick">
             <div class="col-6">
               <div class="text-white bg-dark  mb-3">
-              <div class="card-body">
+              <div class="card-body"> 
                 <h5 class="card-title"> Trick Board</h5>
                 <h6 class="card-subtitle mb-2 text-muted"> If you've been to this spot, let us know what trick you completed! </h6>
-                <p class="card-text">  
+                <h6 class="card-subtitle mb-2 text-muted"><a href="http://skateyeg.com/bog/index.html" target = "_blank"> <button class="btn btn-primary"> Book of Grinds </button> </a> </h6>
+                <p class="card-text">   
                 <input type="text" v-model="newTrickParams.content" style = "width:30rem;"/> 
                 <a href="#" class="card-link"> <button class="btn btn-primary" v-on:click="createTrick();"> Add </button> </a>
                 </p>
