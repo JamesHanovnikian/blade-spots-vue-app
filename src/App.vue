@@ -5,7 +5,7 @@
 
       <h1 class="logo">
       <!-- Uncomment below if you prefer to use an image logo -->
-      <a href="/"><img src="assets/img/bladespotslogonew1.png"  alt="" class="img-fluid" id="logo-image"> </a></h1>
+      <a href="/"><img src="assets/img/logonew.png"  alt="" class="img-fluid" id="logo-image"> </a></h1>
 
       <nav id="navbar" class="navbar">
         <ul>
@@ -85,7 +85,7 @@
 
         <div class="container">
           <div class="copyright">
-            &copy; Copyright <strong><span>Groovin</span></strong>. All Rights Reserved
+           Created by <strong><span>James Hanovnikian</span></strong>
           </div>
           <div class="credits">
             <!-- All the links in the footer should remain intact. -->

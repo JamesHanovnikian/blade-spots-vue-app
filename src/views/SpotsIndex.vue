@@ -15,7 +15,12 @@
               <li v-on:click="changeBank()"> Bank </li> 
             </ul>
           </div>
-        </div>       
+        </div>  
+        <div>
+          <label for=""> Filter By Location: </label>
+          <input type="text" placeholder= "Enter your address"> 
+        </div>
+             
         <div class="row portfolio-container">
           <div class="col-lg-4 col-md-12  portfolio-item filter-web" v-for="spot in filterBy(spots, searchTerm ,'category')"> 
             <div class="portfolio-wrap">

@@ -77,7 +77,7 @@ export default {
 
       const map = new mapboxgl.Map({
         container: "map", // container ID
-        style: "mapbox://styles/mapbox/navigation-night-v1", // style URL
+        style: "mapbox://styles/mapbox/streets-v11", // style URL
         center: [-87.6298, 41.8781], // starting position [lng, lat]
         zoom: 10, // starting zoom
       });
