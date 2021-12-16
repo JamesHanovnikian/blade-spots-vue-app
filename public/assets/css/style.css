@@ -1440,14 +1440,14 @@ section {
 # Footer
 --------------------------------------------------------------*/
 #footer {
-  background: #174C4F;
+  background:rgba(0, 0, 0, 0.75);;
   padding: 0 0 30px 0;
-  color: #FFF4F2;
+  color: #fff;
   font-size: 14px;
 }
 
 #footer .footer-top {
-  background: ##174C4F;
+  background: #174C4F;
   border-bottom: 1px solid #2f2f2f;
   padding: 60px 0 30px 0;
 }
@@ -1488,7 +1488,7 @@ section {
 }
 
 #footer .footer-top .social-links a:hover {
-  background: #72735F;
+  background: #174C4F;
   color: #fff;
   text-decoration: none;
 }
@@ -1513,7 +1513,7 @@ section {
 
 #footer .footer-top .footer-links ul i {
   padding-right: 2px;
-  color: #8ed851;
+  color: #eee;
   font-size: 18px;
   line-height: 1;
 }
@@ -1536,7 +1536,7 @@ section {
 }
 
 #footer .footer-top .footer-links ul a:hover {
-  color: #81d33d;
+  color: #cbccca;
 }
 
 #footer .footer-top .footer-newsletter form {
@@ -1562,14 +1562,14 @@ section {
   background: none;
   font-size: 16px;
   padding: 0 20px;
-  background: #72735F;
+  background: #FF9666;
   color: #fff;
   transition: 0.3s;
   border-radius: 0 4px 4px 0;
 }
 
 #footer .footer-top .footer-newsletter form input[type="submit"]:hover {
-  background: #6ab82a;
+  background: #be643a;
 }
 
 #footer .copyright {
@@ -1582,4 +1582,5 @@ section {
   text-align: center;
   font-size: 13px;
   color: #fff;
+
 }
