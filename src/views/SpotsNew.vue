@@ -1,47 +1,76 @@
 <template>
   <div class="SpotsNew">
-    
-    
-    
     <section id="contact" class="contact">
       <div class="container">
-        <div class="section-title">
-          <h2>Submit your Spot</h2>
+        <div class="content">
+           <div class="section-title">
+            <h2>Submit your Spot</h2>
+           </div>
+         <form class="add-form" v-on:submit.prevent="submit()">
+          <div class="form-group">
+            <label for="exampleInputEmail1"> Name </label>
+            <input v-model="newSpotParams.name" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Name">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1"> Address </label>
+            <input v-model="newSpotParams.address" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Address">
+          </div>
+          <div class="form-group input-group-sm ">
+            <label for="category"> Category </label> <span style="display: inline; float: none;"></span>  
+            <select v-model="newSpotParams.category" id="category" name="category" class="form-control">
+              <option value="AL">Rail </option>
+              <option value="AK">Skatepark</option>
+              <option value="AZ">Ledge</option>
+            </select>
+          </div>
+        <div class="form-group input-group-sm ">
+           <label for="bust"> Bust-Level </label> 
+           <span style="display: inline; float: none;"></span>  
+            <select v-model="newSpotParams.bust" id="bust" name="category" class="form-control">
+              <option value="AL">Low  </option>
+              <option value="AK">Medium</option>
+              <option value="AZ">High</option>
+            </select>
         </div>
-        <div class="form">
-          <form v-on:submit.prevent="submit()">
-            <div class="row">
-              <div class="col-md-6 form-group">
-                <input type="text" v-model="newSpotParams.name" class="form-control" id="name" placeholder="Spot Name">
-              </div>
-              <div class="col-md-6 form-group mt-3 mt-md-0">
-                <input type="text" v-model="newSpotParams.address" class="form-control" name="address" id="address" placeholder="Address">
-              </div>
-            </div>
-             <div class="col-mdform-group mt-3">
-                <div>
-                  <label class="typo__label"> Category: </label> <multiselect v-model="newSpotParams.category" :options ="options" :searchable="false" :close-on-select="true" :show-labels="false" placeholder="Select Category"></multiselect>
-                </div>
-            </div>
-              <div class="form-group mt-3">
-                <label class="bust-level"> Bust-Level: </label>
-                <multiselect v-model="newSpotParams.bust" :options="optionsBust" :searchable="false" :close-on-select="true" :show-labels="false" placeholder="Select Bust-level"> </multiselect>
-              </div>
-            <div class="form-group mt-3">
-              <textarea class="form-control" v-model="newSpotParams.description"  name="description" rows="5" placeholder="Description" ></textarea>
-            </div>
-            <div class="input-picture">
+        <div class="form-group">
+          <label for="exampleInputEmail1"> Description </label>
+          <input v-model="newSpotParams.description" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Description">
+        </div>
+        <div class="input-picture">
               Upload a picture: <input type="file" v-on:change="setFile($event)" ref="fileInput"> 
-            </div>
-            
-            <div class="text-center"> <input class="btn btn-success" type="submit" value="Submit"></div>
-          </form>
         </div>
-
+        <div class="text-center"> <input class="btn btn-success" type="submit" value="Submit"></div>
+      </form> 
+      <div class="images">
+        <div class="card">
+          <img class="card-img-top" src="https://storage.googleapis.com/fsscs1/images/large/577ff9b2adc92f845c58496e500d0dbc.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title"> Handrail </h5>
+            <p class="card-text"> Any handrail from downrails to flat </p>
+          </div>
+        </div>
+         <div class="card">
+          <img class="card-img-top" src="https://storage.googleapis.com/fsscs1/images/large/4c0c4361282957f7cdac8d00c669cf0d.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title"> Ledge </h5>
+            <p class="card-text"> From concrete to marble, this is any spot with a flat edge</p>
+          </div>
+        </div>
+         <div class="card">
+          <img class="card-img-top" src="https://live.staticflickr.com/3297/3418059175_6fc11e8a5a_b.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title"> Park </h5>
+            <p class="card-text"> Creative goodness</p>
+          </div>
+        </div>
+    </div>
+  </div>
+       
+    
+     
       </div>
     </section>
-  </form>   
- </div>
+    </div>  
 </template>
 
 <style>

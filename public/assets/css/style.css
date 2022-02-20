@@ -9,7 +9,7 @@
 # General
 --------------------------------------------------------------*/
 body {
-  font-family: 'Roboto', 'Arial Narrow', Arial, sans-serif;
+  font-family: 'Raleway', sans-serif;
   color: #444444;
 }
 
@@ -948,6 +948,40 @@ section {
   border: 1px soli: #72735F;
 }
 
+.SpotsNew .content {
+  display: grid; 
+  grid-template-columns: 1fr 1fr 1fr 1fr; 
+  align-items: center;
+}
+
+.SpotsNew .add-form {
+  grid-column-start: 1; 
+  grid-column-end: 4;
+  width: 70%; 
+}
+
+.SpotsNew .images {
+  grid-column-start: 4; 
+  grid-column-end: 6; 
+  grid-row-start: 1; 
+  grid-row-end: 4; 
+}
+
+.SpotsNew .section-title {
+  grid-column-start: 1; 
+  grid-column-end: 3; 
+}
+
+.SpotsNew img {
+  border-radius: 2rem; 
+  max-width: 230px; 
+}
+
+.SpotsNew .card {
+  border: none; 
+
+}
+
 .portfolio-details .portfolio-details-slider .swiper-pagination .swiper-pagination-bullet-active {
   background-color: #72735F;
 }
@@ -1468,7 +1502,7 @@ section {
   font-size: 14px;
   line-height: 24px;
   margin-bottom: 0;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Raleway', sans-serif;
   color: #FFF4F2;
 }
 

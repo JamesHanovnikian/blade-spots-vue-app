@@ -17,9 +17,9 @@
           </div>
         </div>  
         <div>
-          <label for=""> Filter By Location: </label>
-          <input type="text" placeholder= "Enter your address"> 
-        </div>
+          <label for=""> Hello. What is your current location? </label>
+          <input type="text" placeholder= "Type your address in"> 
+        </div> 
              
         <div class="row portfolio-container">
           <div class="col-lg-4 col-md-12  portfolio-item filter-web" v-for="spot in filterBy(spots, searchTerm ,'category')"> 
@@ -27,12 +27,12 @@
               <img id="portfolio-imgs" src v-bind:src="spot.image" class="img-fluid" alt="">
               <div class="portfolio-info">
                 <h4> {{ spot.name }}</h4>
-                <p>{{ spot.address }}</p>
+                <p>{{ spot.address }} </p>
                 
                 <div class="portfolio-links">
                 
                   <router-link v-bind:to="`/spots/${spot.id}`">
-                  <i class="bx bxs-info-circle"> </i>
+                  <button class="btn btn-primary">  Details </button> </i>
                   </router-link>
                   
                 </div>

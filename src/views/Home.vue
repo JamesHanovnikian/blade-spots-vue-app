@@ -13,7 +13,7 @@
             <div class="carousel-container">
               <div class="carousel-content">
                 <h2 class="animate__animated animate__fadeInDown"> Welcome to BladeSpots </h2>
-                <p class="animate__animated animate__fadeInUp"> Find the best skate spots in one location  <br> Share favorite spots with others </p>
+                <p class="animate__animated animate__fadeInUp"> A tool to find the best skate spots in your area and share with others </p>
                 
                 <div>
                   <a href="/login" class="btn-get-started animate__animated animate__fadeInUp scrollto"> Log In </a>
