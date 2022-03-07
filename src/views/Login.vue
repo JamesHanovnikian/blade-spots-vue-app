@@ -1,7 +1,7 @@
 <template>
   <div class="login">
     
-    
+  <Text /> 
   <div class="row"> 
     <div class="section-title">
       <h2>Log In</h2>
@@ -90,7 +90,9 @@ import axios from "axios";
 import Multiselect from "vue-multiselect";
 
 export default {
-  components: { Multiselect },
+  components: {
+    Multiselect,
+  },
   data: function () {
     return {
       newSessionParams: {},

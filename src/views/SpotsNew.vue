@@ -41,7 +41,7 @@
         </div>
         <div class="text-center"> <input class="btn btn-success" type="submit" value="Submit"></div>
       </form> 
-      <div class="images">
+      <div class="image-1">
         <div class="card">
           <img class="card-img-top" src="https://storage.googleapis.com/fsscs1/images/large/577ff9b2adc92f845c58496e500d0dbc.jpg" alt="Card image cap">
           <div class="card-body">
@@ -49,6 +49,8 @@
             <p class="card-text"> Any handrail from downrails to flat </p>
           </div>
         </div>
+      </div> 
+      <div class="image-2">
          <div class="card">
           <img class="card-img-top" src="https://storage.googleapis.com/fsscs1/images/large/4c0c4361282957f7cdac8d00c669cf0d.jpg" alt="Card image cap">
           <div class="card-body">
@@ -56,6 +58,8 @@
             <p class="card-text"> From concrete to marble, this is any spot with a flat edge</p>
           </div>
         </div>
+      </div> 
+      <div class="image-3">
          <div class="card">
           <img class="card-img-top" src="https://live.staticflickr.com/3297/3418059175_6fc11e8a5a_b.jpg" alt="Card image cap">
           <div class="card-body">
@@ -63,7 +67,7 @@
             <p class="card-text"> Creative goodness</p>
           </div>
         </div>
-    </div>
+      </div>
   </div>
        
     

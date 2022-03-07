@@ -954,18 +954,37 @@ section {
   align-items: center;
 }
 
-.SpotsNew .add-form {
+
+
+.SpotsNew .add-form { 
+  padding-top: 5px; 
   grid-column-start: 1; 
   grid-column-end: 4;
   width: 70%; 
 }
 
-.SpotsNew .images {
+.SpotsNew .image-1 {
   grid-column-start: 4; 
   grid-column-end: 6; 
   grid-row-start: 1; 
   grid-row-end: 4; 
 }
+
+.SpotsNew .image-2 {
+  grid-column-start: 4; 
+  grid-column-end: 6; 
+  grid-row-start: 1; 
+  grid-row-end: 4; 
+}
+
+.SpotsNew .image-3 {
+  grid-column-start: 4; 
+  grid-column-end: 6; 
+  grid-row-start: 1; 
+  grid-row-end: 4; 
+}
+
+
 
 .SpotsNew .section-title {
   grid-column-start: 1; 
