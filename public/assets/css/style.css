@@ -844,6 +844,7 @@ section {
   position: relative;
   overflow: hidden;
   z-index: 1;
+ 
   background: rgba(42, 42, 42, 0.7);
 }
 
@@ -983,6 +984,8 @@ section {
   grid-row-start: 1; 
   grid-row-end: 4; 
 }
+
+
 
 
 

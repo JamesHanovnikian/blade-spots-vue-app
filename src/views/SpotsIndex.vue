@@ -18,7 +18,8 @@
         </div>  
         <div>
           <label for=""> Hello. What is your current location? </label>
-          <input type="text" placeholder= "Type your address in"> 
+          <input v-model="currentAddress" type="text" placeholder= "Type your address in"> 
+          <button v-on:click="spotsIndex()"> Submit  </button> 
         </div> 
              
         <div class="row portfolio-container">
@@ -77,10 +78,16 @@ export default {
   methods: {
     spotsIndex: function () {
       console.log("Showing all spots...");
-      axios.get("/spots").then((response) => {
-        console.log("spots index", response.data);
-        this.spots = response.data;
-      });
+      axios
+        .get("/spots", { params: { address: this.currentAddress } })
+        .then((response) => {
+          console.log("spots index", response.data);
+          this.spots = response.data;
+        });
+    },
+    currentLocation: function () {
+      console.log("Current location is .... ");
+      console.log(this.currentAddress);
     },
     changeSkatepark: function () {
       console.log("hello");
